@@ -2,15 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/home/configuration/</loc>
+    <loc>https://utkarshcmu.github.io/wizzy-site/commands/remote/datasource-comands/</loc>
   </url>
   
   <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/home/installation/</loc>
+    <loc>https://utkarshcmu.github.io/wizzy-site/commands/local/</loc>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</loc>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/home/concepts/</loc>
   </url>
   
   <url>
     <loc>https://utkarshcmu.github.io/wizzy-site/tutorials/store-dashboards-in-github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/commands/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/commands/</loc>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/commands/remote/dashboard-commands/</loc>
   </url>
   
   <url>
@@ -20,6 +45,10 @@
   <url>
     <loc>https://utkarshcmu.github.io/wizzy-site/home/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/commands/remote/</loc>
   </url>
   
   <url>

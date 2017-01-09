@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Home</title>
+    <title>Datasource Commands</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/home/">
+  <body class="" data-url="/wizzy-site/commands/remote/datasource-comands/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -66,7 +66,7 @@
       
       
 
-      <li class="dd-item active parent" data-nav-id="/wizzy-site/home/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/home/">
         <a href="/wizzy-site/home/">
           <span>
             
@@ -116,7 +116,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/commands/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/commands/">
         <a href="/wizzy-site/commands/">
           <span>
             
@@ -146,7 +146,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/commands/remote/datasource-comands/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/commands/remote/datasource-comands/">
               <a href="/wizzy-site/commands/remote/datasource-comands/">
                 <span>Datasource Commands     </i></span>
               </a>
@@ -227,15 +227,17 @@
                 
                 
                   
-                
-                  
                     
                     
+                <a href="/wizzy-site/commands/" itemprop="url"><span itemprop="title">Commands</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
                   
                 
-                <span itemprop="title"> Home</span>
+                  
+                
+                <span itemprop="title"> Datasource Commands</span>
               </div>
               
 
@@ -248,9 +250,26 @@
 
 
 
-<h1 id="wizzy">wizzy</h1>
+<h1 id="datasource-commands">Datasource commands</h1>
 
-<p><code>wizzy</code> is a rich user-friendly command line tool written in node.js to manage Grafana entities. It can save you hundreds of clicks in a day when editing and managing your Grafana dashboards, rows, datasources, etc. It can also be used to store the entities like dashboards, rows, panels and even template variables in a Github repo making Grafana entities version controlled.</p>
+<pre><code>$ wizzy show datasources
+	- shows you all the datasources in JSON
+
+$ wizzy import datasources
+	- imports all datasources in JSON format and store under datasources directory
+
+$ wizzy export datasources
+	- export all local datasources to Grafana
+
+$ wizzy import datasource DATASOURCE_NAME
+	- imports a datasource in JSON format and store under datasources directory
+
+$ wizzy show datasource DATASOURCE_NAME
+	- shows you a datasource in JSON
+
+$ wizzy export datasource DATASOURCE_NAME
+	- exports local datasource JSON object to replace the one in Grafana
+</code></pre>
 
 
       
@@ -261,8 +280,8 @@
 
     <div id="navigation">
         
-        
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//home/use-cases" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//commands/remote/dashboard-commands"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//commands/remote/orgs-commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

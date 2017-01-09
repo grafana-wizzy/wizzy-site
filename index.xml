@@ -9,21 +9,167 @@
     <atom:link href="https://utkarshcmu.github.io/wizzy-site/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Configuration</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/configuration/</link>
+      <title>Datasource Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/remote/datasource-comands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/configuration/</guid>
-      <description></description>
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/remote/datasource-comands/</guid>
+      <description>
+
+&lt;h1 id=&#34;datasource-commands&#34;&gt;Datasource commands&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show datasources
+	- shows you all the datasources in JSON
+
+$ wizzy import datasources
+	- imports all datasources in JSON format and store under datasources directory
+
+$ wizzy export datasources
+	- export all local datasources to Grafana
+
+$ wizzy import datasource DATASOURCE_NAME
+	- imports a datasource in JSON format and store under datasources directory
+
+$ wizzy show datasource DATASOURCE_NAME
+	- shows you a datasource in JSON
+
+$ wizzy export datasource DATASOURCE_NAME
+	- exports local datasource JSON object to replace the one in Grafana
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
-      <title>Installation</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/installation/</link>
+      <title>Local Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/local/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/installation/</guid>
-      <description></description>
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/local/</guid>
+      <description>
+
+&lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;
+
+&lt;p&gt;These commands operates directly on remote dashboards in Grafana via API, so please use them carefully. Dashboard Context(which is explained next) is not supported by these commands currently as they will interact with Grafana API directly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Use cases</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</guid>
+      <description>&lt;p&gt;If you would like to do the following in Grafana, then &lt;code&gt;wizzy&lt;/code&gt; is a great command line tools which can accomplish the following tasks with ease:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Storing Grafana dashboards, rows, panels, datasources, orgs, template variables, etc. in Git.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy, move or edit rows and panels either within a dashboard or between two dashboards.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Uploading and downloading Grafana dashboards from and to AWS S3 respectively.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Generating 8 second GIFs for any Grafana dashboard with last 24 hours of data.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</guid>
+      <description>
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;Install nodejs by downloading it from nodejs.org. (&lt;a href=&#34;https://nodejs.org/en/download/&#34;&gt;https://nodejs.org/en/download/&lt;/a&gt;). After installing nodejs, run following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ node -v
+$ npm -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: Please make sure node version is above 5.10.1.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;There are 3 different ways you can install wizzy:&lt;/p&gt;
+
+&lt;p&gt;1 - Use docker image &lt;a href=&#34;https://github.com/utkarshcmu/wizzy-docker&#34;&gt;wizzy-docker&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker pull utkarshcmu/wizzy
+	- pulls latest docker image
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2 - Using npm (Stable release):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -g wizzy
+	- Use sudo if needed or permission was denied
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3 - Using Github (from source):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/utkarshcmu/wizzy.git
+$ cd wizzy
+$ npm install
+$ npm link
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;initialization&#34;&gt;Initialization&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Check wizzy version&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy version
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create a Github repo for storing dashboards&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir grafana-dash
+$ cd grafana-dash
+$ git init
+	- optional step to store dashboards in a github repo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Initialize wizzy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy init
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set Grafana properties in wizzy&amp;rsquo;s config&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url GRAFANA_URL
+	- a required setting to connect to Grafana installation
+$ wizzy set grafana username USERNAME
+	- if anonymous access to Grafana is disabled.
+$ wizzy set grafana password PASSWORD
+	- if anonymous access to Grafana is disabled.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: Add &lt;code&gt;conf&lt;/code&gt; directory to .gitignore to avoid checking your credentials into git repo.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Test wizzy setup&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy status
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You are ready to use wizzy. Check out tutorials!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Concepts</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/home/concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/home/concepts/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;local dashboard&lt;/em&gt; - a json dashboard file under dashboards directory on local disk&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;remote dashboard&lt;/em&gt; - a dashboard currently live in Grafana&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -37,6 +183,56 @@
     </item>
     
     <item>
+      <title>Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/</guid>
+      <description>
+
+&lt;h1 id=&#34;commands&#34;&gt;Commands&lt;/h1&gt;
+
+&lt;p&gt;Broadly there are two types of commands in wizzy. Remote commands, which interacts with external sources like Grafana, S3, etc, and local commands, which operate on local json entities like dashboards, datasources, etc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dashboard Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/remote/dashboard-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/remote/dashboard-commands/</guid>
+      <description>
+
+&lt;h1 id=&#34;dashboard-commands&#34;&gt;Dashboard commands&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
+	- prints list of dashboards from Grafana in a tabular format
+
+$ wizzy show dashboard DASHBOARD_SLUG
+	- prints a remote dashboard from Grafana
+
+$ wizzy import dashboards
+	- copies all remote dashboards jsons and creates/replaces local dashboard jsons
+
+$ wizzy import dashboard DASHBOARD_SLUG
+	- copies a remote dashboard json and creates a local dashboard
+
+$ wizzy export dashboard DASHBOARD_SLUG
+	- exports a local dashboard to be saved as a remote dashboard and go live
+
+$ wizzy delete dashboard DASHBOARD_SLUG
+	- deletes a remote dashboard from Grafana
+
+$ wizzy clip dashboard DASHBOARD_SLUG
+	- makes a clip (gif) of dashboard&#39;s last 24 hours of data
+	- Note: Pleas set all 6 clip configuration properties otherwise this command will not work
+	- See at the bottom of the page to set clip configuration properties
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Home</title>
       <link>https://utkarshcmu.github.io/wizzy-site/home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -44,9 +240,23 @@
       <guid>https://utkarshcmu.github.io/wizzy-site/home/</guid>
       <description>
 
-&lt;h3 id=&#34;home&#34;&gt;Home&lt;/h3&gt;
+&lt;h1 id=&#34;wizzy&#34;&gt;wizzy&lt;/h1&gt;
 
-&lt;p&gt;This is the home page for wizzy!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wizzy&lt;/code&gt; is a rich user-friendly command line tool written in node.js to manage Grafana entities. It can save you hundreds of clicks in a day when editing and managing your Grafana dashboards, rows, datasources, etc. It can also be used to store the entities like dashboards, rows, panels and even template variables in a Github repo making Grafana entities version controlled.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Remote Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/remote/</guid>
+      <description>
+
+&lt;h1 id=&#34;remote-commands&#34;&gt;Remote commands&lt;/h1&gt;
+
+&lt;p&gt;These commands operates on local json file based dashboards and support Dashboard Context.&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commands on wizzy - cli for Grafana</title>
+    <link>https://utkarshcmu.github.io/wizzy-site/commands/index.xml</link>
+    <description>Recent content in Commands on wizzy - cli for Grafana</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://utkarshcmu.github.io/wizzy-site/commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/</guid>
+      <description>
+
+&lt;h1 id=&#34;commands&#34;&gt;Commands&lt;/h1&gt;
+
+&lt;p&gt;Broadly there are two types of commands in wizzy. Remote commands, which interacts with external sources like Grafana, S3, etc, and local commands, which operate on local json entities like dashboards, datasources, etc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dashboard Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/remote/dashboard-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/remote/dashboard-commands/</guid>
+      <description>
+
+&lt;h1 id=&#34;dashboard-commands&#34;&gt;Dashboard commands&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
+	- prints list of dashboards from Grafana in a tabular format
+
+$ wizzy show dashboard DASHBOARD_SLUG
+	- prints a remote dashboard from Grafana
+
+$ wizzy import dashboards
+	- copies all remote dashboards jsons and creates/replaces local dashboard jsons
+
+$ wizzy import dashboard DASHBOARD_SLUG
+	- copies a remote dashboard json and creates a local dashboard
+
+$ wizzy export dashboard DASHBOARD_SLUG
+	- exports a local dashboard to be saved as a remote dashboard and go live
+
+$ wizzy delete dashboard DASHBOARD_SLUG
+	- deletes a remote dashboard from Grafana
+
+$ wizzy clip dashboard DASHBOARD_SLUG
+	- makes a clip (gif) of dashboard&#39;s last 24 hours of data
+	- Note: Pleas set all 6 clip configuration properties otherwise this command will not work
+	- See at the bottom of the page to set clip configuration properties
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Remote Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/remote/</guid>
+      <description>
+
+&lt;h1 id=&#34;remote-commands&#34;&gt;Remote commands&lt;/h1&gt;
+
+&lt;p&gt;These commands operates on local json file based dashboards and support Dashboard Context.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Datasource Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/remote/datasource-comands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/remote/datasource-comands/</guid>
+      <description>
+
+&lt;h1 id=&#34;datasource-commands&#34;&gt;Datasource commands&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show datasources
+	- shows you all the datasources in JSON
+
+$ wizzy import datasources
+	- imports all datasources in JSON format and store under datasources directory
+
+$ wizzy export datasources
+	- export all local datasources to Grafana
+
+$ wizzy import datasource DATASOURCE_NAME
+	- imports a datasource in JSON format and store under datasources directory
+
+$ wizzy show datasource DATASOURCE_NAME
+	- shows you a datasource in JSON
+
+$ wizzy export datasource DATASOURCE_NAME
+	- exports local datasource JSON object to replace the one in Grafana
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Local Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/commands/local/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/commands/local/</guid>
+      <description>
+
+&lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;
+
+&lt;p&gt;These commands operates directly on remote dashboards in Grafana via API, so please use them carefully. Dashboard Context(which is explained next) is not supported by these commands currently as they will interact with Grafana API directly.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
