@@ -54,6 +54,10 @@
   </url>
   
   <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-github/</loc>
+  </url>
+  
+  <url>
     <loc>https://utkarshcmu.github.io/wizzy-site/home/concepts/</loc>
   </url>
   
@@ -78,7 +82,12 @@
   </url>
   
   <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/tutorials/store-dashboards-in-github/</loc>
+    <loc>https://utkarshcmu.github.io/wizzy-site/examples/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/examples/</loc>
   </url>
   
   <url>
@@ -108,15 +117,6 @@
   <url>
     <loc>https://utkarshcmu.github.io/wizzy-site/remote-commands/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/tutorials/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/tutorials/</loc>
   </url>
   
   <url>

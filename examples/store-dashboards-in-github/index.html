@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Getting Started</title>
+    <title>Store Dashboards in Github</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/home/getting-started/">
+  <body class="" data-url="/wizzy-site/examples/store-dashboards-in-github/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -78,7 +78,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/wizzy-site/home/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/home/">
         <a href="/wizzy-site/home/">
           <span>
             
@@ -100,7 +100,7 @@
           
           
           
-            <li class="dd-item active" data-nav-id="/wizzy-site/home/getting-started/">
+            <li class="dd-item " data-nav-id="/wizzy-site/home/getting-started/">
               <a href="/wizzy-site/home/getting-started/">
                 <span>Getting Started     </i></span>
               </a>
@@ -322,7 +322,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/examples/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/examples/">
         <a href="/wizzy-site/examples/">
           <span>
             
@@ -336,7 +336,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/examples/store-dashboards-in-github/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/examples/store-dashboards-in-github/">
               <a href="/wizzy-site/examples/store-dashboards-in-github/">
                 <span>Store Dashboards in Github     </i></span>
               </a>
@@ -375,15 +375,9 @@
                 
                 
                   
-                
-                  
-                
-                  
-                
-                  
                     
                     
-                <a href="/wizzy-site/home/" itemprop="url"><span itemprop="title">Home</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/wizzy-site/examples/" itemprop="url"><span itemprop="title">Examples</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
@@ -391,7 +385,13 @@
                 
                   
                 
-                <span itemprop="title"> Getting Started</span>
+                  
+                
+                  
+                
+                  
+                
+                <span itemprop="title"> Store Dashboards in Github</span>
               </div>
               
 
@@ -399,85 +399,10 @@
             
     	        <div id="body-inner">
                 
-                <h1>Getting Started</h1>
+                <h1>Store Dashboards in Github</h1>
                 
 
-
-
-<h2 id="prerequisites">Prerequisites</h2>
-
-<p>Install nodejs by downloading it from nodejs.org. (<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>). After installing nodejs, run following commands:</p>
-
-<pre><code>$ node -v
-$ npm -v
-</code></pre>
-
-<p>Note: Please make sure node version is above 5.10.1.</p>
-
-<h2 id="installation">Installation</h2>
-
-<p>There are 3 different ways you can install wizzy:</p>
-
-<p>1 - Use docker image <a href="https://github.com/utkarshcmu/wizzy-docker">wizzy-docker</a></p>
-
-<pre><code>$ docker pull utkarshcmu/wizzy
-	- pulls latest docker image
-</code></pre>
-
-<p>2 - Using npm (Stable release):</p>
-
-<pre><code>$ npm install -g wizzy
-	- Use sudo if needed or permission was denied
-</code></pre>
-
-<p>3 - Using Github (from source):</p>
-
-<pre><code>$ git clone https://github.com/utkarshcmu/wizzy.git
-$ cd wizzy
-$ npm install
-$ npm link
-</code></pre>
-
-<h2 id="initialization">Initialization</h2>
-
-<ul>
-<li><p>Check wizzy version</p>
-
-<pre><code>$ wizzy version
-</code></pre></li>
-
-<li><p>Create a Github repo for storing dashboards</p>
-
-<pre><code>$ mkdir grafana-dash
-$ cd grafana-dash
-$ git init
-	- optional step to store dashboards in a github repo
-</code></pre></li>
-
-<li><p>Initialize wizzy</p>
-
-<pre><code>$ wizzy init
-</code></pre></li>
-
-<li><p>Set Grafana properties in wizzy&rsquo;s config</p>
-
-<pre><code>$ wizzy set grafana url GRAFANA_URL
-	- a required setting to connect to Grafana installation
-$ wizzy set grafana username USERNAME
-	- if anonymous access to Grafana is disabled.
-$ wizzy set grafana password PASSWORD
-	- if anonymous access to Grafana is disabled.
-</code></pre>
-
-<p>Note: Add <code>conf</code> directory to .gitignore to avoid checking your credentials into git repo.</p></li>
-
-<li><p>Test wizzy setup</p>
-
-<pre><code>$ wizzy status
-</code></pre></li>
-</ul>
-
-<p>You are ready to use wizzy. Check out tutorials!</p>
+<p>Learn how to store dashboards in Github</p>
 
 
       
@@ -486,8 +411,8 @@ $ wizzy set grafana password PASSWORD
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//home/use-cases"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//home/concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//examples"> <i class="fa fa-chevron-left"></i></a>
+        
     </div>
 
     </section>
