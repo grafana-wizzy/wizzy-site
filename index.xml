@@ -115,7 +115,9 @@ $ wizzy set s3 path
 
 &lt;h1 id=&#34;remote-commands&#34;&gt;Remote Commands&lt;/h1&gt;
 
-&lt;p&gt;These commands operates directly on remote dashboards in Grafana via API, so please use them carefully. Dashboard Context(which is explained next) is not supported by these commands currently as they will interact with Grafana API directly.&lt;/p&gt;
+&lt;p&gt;These commands operates directly on your Grafana installation via API, so please use them carefully. Commands for importing, listing, exporting and deleting dashboards, orgs, datasources are part of this set of commands.These commands are usually used when you have completed local changes and now the changes are ready to be pushed to your Grafana installation.&lt;/p&gt;
+
+&lt;p&gt;Dashboard Context(which is explained in local commands section) is not supported by these commands currently.&lt;/p&gt;
 </description>
     </item>
     
@@ -125,17 +127,22 @@ $ wizzy set s3 path
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</guid>
-      <description>&lt;p&gt;If you would like to do the following in Grafana, then &lt;code&gt;wizzy&lt;/code&gt; is a great command line tools which can accomplish the following tasks with ease:&lt;/p&gt;
+      <description>&lt;p&gt;There can be a lot of use cases where wizzy can be used and some of them which I can think of right now are listed below. If you would like to do any of the following tasks in Grafana, then &lt;code&gt;wizzy&lt;/code&gt; can help you accomplish them with its easy command line interface:&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Storing Grafana dashboards, rows, panels, datasources, orgs, template variables, etc. in Git.&lt;/p&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;    1. Copy Grafana dashboards from one installation of Grafana to another.
 
-&lt;li&gt;&lt;p&gt;Copy, move or edit rows and panels either within a dashboard or between two dashboards.&lt;/p&gt;&lt;/li&gt;
+    2. Store Grafana dashboards, rows, panels, datasources, orgs and even template variables, etc. in Git.
 
-&lt;li&gt;&lt;p&gt;Uploading and downloading Grafana dashboards from and to AWS S3 respectively.&lt;/p&gt;&lt;/li&gt;
+    3. Copy, move, remove, edit rows and panels either within a dashboard or between two dashboards.
 
-&lt;li&gt;&lt;p&gt;Generating 8 second GIFs for any Grafana dashboard with last 24 hours of data.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+    4. Upload/Store/Download Grafana dashboards from and to AWS S3 respectively.
+
+    5. Search/Download Grafana.net community dashboards in a single command.
+
+    6. Generate 8 second GIFs for any Grafana dashboard with last 24 hours of data for your presentations.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Feel free to add more use cases of &lt;code&gt;wizzy&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -192,29 +199,78 @@ $ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/dashboard-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
-	- prints list of dashboards from Grafana in a tabular format
+      <description>&lt;p&gt;Following commands are used to interact with Grafana dashboards.&lt;/p&gt;
 
-$ wizzy show dashboard DASHBOARD_SLUG
-	- prints a remote dashboard from Grafana
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Prints the list of dashboards from Grafana in a tabular format&lt;/p&gt;
 
-$ wizzy import dashboards
-	- copies all remote dashboards jsons and creates/replaces local dashboard jsons
+&lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-$ wizzy import dashboard DASHBOARD_SLUG
-	- copies a remote dashboard json and creates a local dashboard
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Prints remote dashboard json from Grafana&lt;/p&gt;
 
-$ wizzy export dashboard DASHBOARD_SLUG
-	- exports a local dashboard to be saved as a remote dashboard and go live
-
-$ wizzy delete dashboard DASHBOARD_SLUG
-	- deletes a remote dashboard from Grafana
-
-$ wizzy clip dashboard DASHBOARD_SLUG
-	- makes a clip (gif) of dashboard&#39;s last 24 hours of data
-	- Note: Pleas set all 6 clip configuration properties otherwise this command will not work
-	- See at the bottom of the page to set clip configuration properties
+&lt;pre&gt;&lt;code&gt;$ wizzy show dashboard DASHBOARD_SLUG
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;import&lt;/strong&gt; - Imports remote dashboards json objects into your local dashboards directory. This command creates a new file if the dashboard does not exist or replaces an existing file if the dashboard exists locally.
+For importing all dashboards from Grafana, use following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to import only one remote dashboard, please use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;export&lt;/strong&gt; - Exports local dashboards to be saved as a remote dashboard and go live in your Grafana installation. This will replace an existing dashboard or creates a new dashboard in Grafana. Please use this carefully.
+For exporting all local dashboards to Grafana, use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to export only one local dashboard, please use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;delete&lt;/strong&gt; - Deletes a remote dashboard from your Grafana installation. Use carefully.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Makes a clip (a gif image) of dashboard&amp;rsquo;s last 24 hours of data. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; Please delete the &lt;code&gt;temp&lt;/code&gt; directory created locally as it contains intermediate images to create the clip.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -309,46 +365,59 @@ $ wizzy export org ORG_ID
 $ npm -v
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Note: Please make sure node version is above 5.10.1.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: Please make sure node version is above 5.10.1.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;There are 3 different ways you can install wizzy:&lt;/p&gt;
 
-&lt;p&gt;1 - Use docker image &lt;a href=&#34;https://github.com/utkarshcmu/wizzy-docker&#34;&gt;wizzy-docker&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Using docker. Pull the latest docker image &lt;a href=&#34;https://github.com/utkarshcmu/wizzy-docker&#34;&gt;wizzy-docker&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ docker pull utkarshcmu/wizzy
-	- pulls latest docker image
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;p&gt;2 - Using npm (Stable release):&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Using npm (Stable release):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ npm install -g wizzy
-	- Use sudo if needed or permission was denied
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;3 - Using Github (from source):&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Node: - Use sudo if needed or permission was denied&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Using Github (from source):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git clone https://github.com/utkarshcmu/wizzy.git
 $ cd wizzy
 $ npm install
 $ npm link
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&#34;initialization&#34;&gt;Initialization&lt;/h2&gt;
 
-&lt;ul&gt;
+&lt;p&gt;Once &lt;code&gt;wizzy&lt;/code&gt; is installed, it needs to be initialized to serve you with the awesome commands it has. These are the most important steps to setup wizzy.&lt;/p&gt;
+
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Check wizzy version&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy version
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Create a Github repo for storing dashboards&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Create a local directory for storing Grafana entities.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ mkdir grafana-dash
-$ cd grafana-dash
-$ git init
-	- optional step to store dashboards in a github repo
+&lt;pre&gt;&lt;code&gt;$ mkdir DIRECTORY_NAME
+$ cd DIRECTORY_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir grafana-entities
+$ cd grafana-entities
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Initialize git repo in your grafana-entities directory. Its an optional step and should be used if you need version control for your Grafana entities such as dashboards, datasources, etc.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git init
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Initialize wizzy&lt;/p&gt;
@@ -356,25 +425,29 @@ $ git init
 &lt;pre&gt;&lt;code&gt;$ wizzy init
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Set Grafana properties in wizzy&amp;rsquo;s config&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Connect to Grafana by setting Grafana properties in wizzy&amp;rsquo;s config. Please set your Grafana username and password if anonymous access to Grafana is disabled.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set grafana url GRAFANA_URL
-	- a required setting to connect to Grafana installation
-$ wizzy set grafana username USERNAME
-	- if anonymous access to Grafana is disabled.
-$ wizzy set grafana password PASSWORD
-	- if anonymous access to Grafana is disabled.
+$ wizzy set grafana username YOUR_USERNAME
+$ wizzy set grafana password YOUR_PASSWORD
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Note: Add &lt;code&gt;conf&lt;/code&gt; directory to .gitignore to avoid checking your credentials into git repo.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
+$ wizzy set grafana username admin
+$ wizzy set grafana password admin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: Add &lt;code&gt;conf&lt;/code&gt; directory to .gitignore to avoid checking in your credentials into git repo.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Test wizzy setup&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy status
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;You are ready to use wizzy. Check out tutorials!&lt;/p&gt;
+&lt;p&gt;You are ready to use wizzy. Check out &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/examples&#34;&gt;examples&lt;/a&gt;!&lt;/p&gt;
 </description>
     </item>
     
@@ -427,11 +500,21 @@ $ wizzy insert row ROW_NAME DESTINATION_SLUG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/home/concepts/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;em&gt;local dashboard&lt;/em&gt; - a json dashboard file under dashboards directory on local disk&lt;/p&gt;&lt;/li&gt;
+      <description>&lt;p&gt;There are basically 2 copies of your Grafana entities. One running in Grafana live currently and second stored in your local directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;local dashboard&lt;/em&gt; - a dashboard json file under dashboards directory on local disk&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;em&gt;remote dashboard&lt;/em&gt; - a dashboard currently live in Grafana&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;local panel&lt;/em&gt; - a panel json file under temp-vars directory on local disk&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;remote panel&lt;/em&gt; - a panel currently live one a dashboard in Grafana&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Commands are available to interact with both copies of your Grafana entities.&lt;/p&gt;
 </description>
     </item>
     

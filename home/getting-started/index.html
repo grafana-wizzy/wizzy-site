@@ -412,46 +412,59 @@
 $ npm -v
 </code></pre>
 
-<p>Note: Please make sure node version is above 5.10.1.</p>
+<p><em>Note: Please make sure node version is above 5.10.1.</em></p>
 
 <h2 id="installation">Installation</h2>
 
 <p>There are 3 different ways you can install wizzy:</p>
 
-<p>1 - Use docker image <a href="https://github.com/utkarshcmu/wizzy-docker">wizzy-docker</a></p>
+<ol>
+<li><p>Using docker. Pull the latest docker image <a href="https://github.com/utkarshcmu/wizzy-docker">wizzy-docker</a></p>
 
 <pre><code>$ docker pull utkarshcmu/wizzy
-	- pulls latest docker image
-</code></pre>
+</code></pre></li>
 
-<p>2 - Using npm (Stable release):</p>
+<li><p>Using npm (Stable release):</p>
 
 <pre><code>$ npm install -g wizzy
-	- Use sudo if needed or permission was denied
 </code></pre>
 
-<p>3 - Using Github (from source):</p>
+<p><em>Node: - Use sudo if needed or permission was denied</em></p></li>
+
+<li><p>Using Github (from source):</p>
 
 <pre><code>$ git clone https://github.com/utkarshcmu/wizzy.git
 $ cd wizzy
 $ npm install
 $ npm link
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h2 id="initialization">Initialization</h2>
 
-<ul>
+<p>Once <code>wizzy</code> is installed, it needs to be initialized to serve you with the awesome commands it has. These are the most important steps to setup wizzy.</p>
+
+<ol>
 <li><p>Check wizzy version</p>
 
 <pre><code>$ wizzy version
 </code></pre></li>
 
-<li><p>Create a Github repo for storing dashboards</p>
+<li><p>Create a local directory for storing Grafana entities.</p>
 
-<pre><code>$ mkdir grafana-dash
-$ cd grafana-dash
-$ git init
-	- optional step to store dashboards in a github repo
+<pre><code>$ mkdir DIRECTORY_NAME
+$ cd DIRECTORY_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ mkdir grafana-entities
+$ cd grafana-entities
+</code></pre></li>
+
+<li><p>Initialize git repo in your grafana-entities directory. Its an optional step and should be used if you need version control for your Grafana entities such as dashboards, datasources, etc.</p>
+
+<pre><code>$ git init
 </code></pre></li>
 
 <li><p>Initialize wizzy</p>
@@ -459,25 +472,29 @@ $ git init
 <pre><code>$ wizzy init
 </code></pre></li>
 
-<li><p>Set Grafana properties in wizzy&rsquo;s config</p>
+<li><p>Connect to Grafana by setting Grafana properties in wizzy&rsquo;s config. Please set your Grafana username and password if anonymous access to Grafana is disabled.</p>
 
 <pre><code>$ wizzy set grafana url GRAFANA_URL
-	- a required setting to connect to Grafana installation
-$ wizzy set grafana username USERNAME
-	- if anonymous access to Grafana is disabled.
-$ wizzy set grafana password PASSWORD
-	- if anonymous access to Grafana is disabled.
+$ wizzy set grafana username YOUR_USERNAME
+$ wizzy set grafana password YOUR_PASSWORD
 </code></pre>
 
-<p>Note: Add <code>conf</code> directory to .gitignore to avoid checking your credentials into git repo.</p></li>
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy set grafana url http://localhost:3000
+$ wizzy set grafana username admin
+$ wizzy set grafana password admin
+</code></pre>
+
+<p><em>Note: Add <code>conf</code> directory to .gitignore to avoid checking in your credentials into git repo.</em></p></li>
 
 <li><p>Test wizzy setup</p>
 
 <pre><code>$ wizzy status
 </code></pre></li>
-</ul>
+</ol>
 
-<p>You are ready to use wizzy. Check out tutorials!</p>
+<p>You are ready to use wizzy. Check out <a href="/wizzy-site/examples">examples</a>!</p>
 
 
       

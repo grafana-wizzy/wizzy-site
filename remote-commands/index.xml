@@ -18,7 +18,9 @@
 
 &lt;h1 id=&#34;remote-commands&#34;&gt;Remote Commands&lt;/h1&gt;
 
-&lt;p&gt;These commands operates directly on remote dashboards in Grafana via API, so please use them carefully. Dashboard Context(which is explained next) is not supported by these commands currently as they will interact with Grafana API directly.&lt;/p&gt;
+&lt;p&gt;These commands operates directly on your Grafana installation via API, so please use them carefully. Commands for importing, listing, exporting and deleting dashboards, orgs, datasources are part of this set of commands.These commands are usually used when you have completed local changes and now the changes are ready to be pushed to your Grafana installation.&lt;/p&gt;
+
+&lt;p&gt;Dashboard Context(which is explained in local commands section) is not supported by these commands currently.&lt;/p&gt;
 </description>
     </item>
     
@@ -28,29 +30,78 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/dashboard-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
-	- prints list of dashboards from Grafana in a tabular format
+      <description>&lt;p&gt;Following commands are used to interact with Grafana dashboards.&lt;/p&gt;
 
-$ wizzy show dashboard DASHBOARD_SLUG
-	- prints a remote dashboard from Grafana
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Prints the list of dashboards from Grafana in a tabular format&lt;/p&gt;
 
-$ wizzy import dashboards
-	- copies all remote dashboards jsons and creates/replaces local dashboard jsons
+&lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-$ wizzy import dashboard DASHBOARD_SLUG
-	- copies a remote dashboard json and creates a local dashboard
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Prints remote dashboard json from Grafana&lt;/p&gt;
 
-$ wizzy export dashboard DASHBOARD_SLUG
-	- exports a local dashboard to be saved as a remote dashboard and go live
-
-$ wizzy delete dashboard DASHBOARD_SLUG
-	- deletes a remote dashboard from Grafana
-
-$ wizzy clip dashboard DASHBOARD_SLUG
-	- makes a clip (gif) of dashboard&#39;s last 24 hours of data
-	- Note: Pleas set all 6 clip configuration properties otherwise this command will not work
-	- See at the bottom of the page to set clip configuration properties
+&lt;pre&gt;&lt;code&gt;$ wizzy show dashboard DASHBOARD_SLUG
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;import&lt;/strong&gt; - Imports remote dashboards json objects into your local dashboards directory. This command creates a new file if the dashboard does not exist or replaces an existing file if the dashboard exists locally.
+For importing all dashboards from Grafana, use following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to import only one remote dashboard, please use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;export&lt;/strong&gt; - Exports local dashboards to be saved as a remote dashboard and go live in your Grafana installation. This will replace an existing dashboard or creates a new dashboard in Grafana. Please use this carefully.
+For exporting all local dashboards to Grafana, use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to export only one local dashboard, please use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;delete&lt;/strong&gt; - Deletes a remote dashboard from your Grafana installation. Use carefully.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Makes a clip (a gif image) of dashboard&amp;rsquo;s last 24 hours of data. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; Please delete the &lt;code&gt;temp&lt;/code&gt; directory created locally as it contains intermediate images to create the clip.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

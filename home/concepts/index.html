@@ -402,11 +402,21 @@
                 <h1>Concepts</h1>
                 
 
+<p>There are basically 2 copies of your Grafana entities. One running in Grafana live currently and second stored in your local directory.</p>
+
+<p><em>For example:</em></p>
+
 <ul>
-<li><p><em>local dashboard</em> - a json dashboard file under dashboards directory on local disk</p></li>
+<li><em>local dashboard</em> - a dashboard json file under dashboards directory on local disk</li>
 
 <li><p><em>remote dashboard</em> - a dashboard currently live in Grafana</p></li>
+
+<li><p><em>local panel</em> - a panel json file under temp-vars directory on local disk</p></li>
+
+<li><p><em>remote panel</em> - a panel currently live one a dashboard in Grafana</p></li>
 </ul>
+
+<p>Commands are available to interact with both copies of your Grafana entities.</p>
 
 
       
