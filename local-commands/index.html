@@ -404,16 +404,21 @@
 
 <h1 id="local-commands">Local commands</h1>
 
-<p>These commands operates on local json file based dashboards and support Dashboard Context.</p>
+<p>These commands operates on local json files representing dashboards, orgs, datasources, panels, rows, template-variable, etc and support Dashboard Context. Commands for moving rows and panels from one dashboard to another are part of this set of commands. These are the most powerful commands of wizzy. Commands such as <code>summarize, move, copy, remove, change</code> are examples of local commands.</p>
 
-<h3 id="dashboard-context">Dashboard context</h3>
+<h2 id="dashboard-context">Dashboard context</h2>
 
 <p>A user can set the dashboard context in wizzy by the following command so that the wizzy cli is aware about the local dashboard on which it should operate. This is an optional setting for some commands and mandatory for other commands, which makes wizzy cli more intuitive and user-friendly.</p>
 
 <pre><code>$ wizzy set context dashboard DASHBOARD_SLUG
 </code></pre>
 
-<p>Note: Once context is set, wizzy will use this dashboard as default if no dashboard is supplied. It will be mentioned in the documentation where setting dashboard context is required.</p>
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy set context dashboard cpu-stats
+</code></pre>
+
+<p><em>Note: Once dashboard context is set, wizzy will use this dashboard as default if no dashboard is supplied. It will be mentioned in the documentation where setting dashboard context is required.</em></p>
 
 
       

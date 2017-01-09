@@ -402,14 +402,30 @@
                 <h1>Dashboard Commands</h1>
                 
 
-<p>These commands impacts the dashboard wide changes</p>
+<p>Following commands are used to interact with json files stored locally under dashboards directory.</p>
 
-<pre><code>$ wizzy summarize dashboard DASHBOARD_SLUG
-	- prints summary of a local dashboard
+<ul>
+<li><p><strong>summarize</strong> - Prints a summarized view of a local dashboard. <code>DASHBOARD_SLUG</code> is optional as the local commands support dashboard context. So, if you have saved dashboard context, you do not need to specifiy the SLUG for the dashboard to use the following command.</p>
 
-$ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
-	- changes OLD_DATASOURCE to NEW_DATASOURCE for all panels on a dashboard
+<pre><code>$ wizzy summarize dashboard &lt;DASHBOARD_SLUG&gt;
 </code></pre>
+
+<p>For example:</p>
+
+<pre><code>$ wizzy summarize dashboard
+$ wizzy summarize dashboard cpu-stats
+</code></pre></li>
+
+<li><p><strong>change</strong> - Changes a datasource name in all the panels on a dashboard. This commands needs dashboard context as it will operate on the dashboard which is set in the context.</p>
+
+<pre><code>$ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy change panels datasource old-graphite new-graphite
+</code></pre></li>
+</ul>
 
 
       

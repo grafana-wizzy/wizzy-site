@@ -402,30 +402,69 @@
                 <h1>Row Commands</h1>
                 
 
-<pre><code>$ wizzy copy row SOURCE_ROW_NUMBER DESTINATION_ROW_NUMBER
-	- copies a row from one position to another on the same dashboard
+<p>Following commands are used to operate on rows in json files stored locally under dashboards/rows directory. These commands need Dashboard Context. Please set Dashboard Context before using them.</p>
 
-$ wizzy copy row SOURCE_ROW_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER
-	- copies a row from one dashboard to another dashboard
+<ul>
+<li><p><strong>copy</strong> - Copies a row from one position to another. This command can be used to copy a row on the same dashboard and as well as to copy a row to other dashboards.</p>
 
-$ wizzy move row SOURCE_ROW_NUMBER DESTINATION_ROW_NUMBER
-	- moves a row from one position to another on the same dashboard
-
-$ wizzy move row SOURCE_ROW_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER
-	- moves a row from one dashboard to another dashboard
-
-$ wizzy remove row SOURCE_ROW_NUMBER
-	- removes a row from the current dashboard
-
-$ wizzy extract row SOURCE_ROW_NUMBER
-  - removes a row from the current dashboard and saves it under rows directory
-
-$ wizzy insert row ROW_NAME
-  - inserts a row from the rows directory to context dashboard
-
-$ wizzy insert row ROW_NAME DESTINATION_SLUG
-	- inserts a row from the rows directory to a dashboard
+<pre><code>$ wizzy copy row SOURCE DESTINATION
 </code></pre>
+
+<p><em><code>SOURCE</code></em> represents row number on the dashboard in context. Should be a <code>ROW_NUMBER</code>.
+<em><code>DESTINATION</code></em> can represent a row number on the same dashboard or on a different dashboard. Can be a <code>ROW_NUMBER</code> or <code>DASHBOARD_SLUG.ROW_NUMBER</code>.
+<em>For example, If you want to copy 2nd row as 4th row in the context dashboard, use:</em></p>
+
+<pre><code>$ wizzy copy row 2 4
+</code></pre>
+
+<p><em>For example, If you want to copy 2nd row from the context dashboard as 1st row in some other dashboard, use:</em></p>
+
+<pre><code>$ wizzy copy row 2 cpu-stats.1
+</code></pre></li>
+
+<li><p><strong>move</strong> - Moves a row from one position to another. This command can be used to move a row on the same dashboard and as well as to move a row to other dashboards.</p>
+
+<pre><code>$ wizzy move row SOURCE DESTINATION
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy move row 2 4
+$ wizzy move row 2 cpu-stats.1
+</code></pre></li>
+
+<li><p><strong>remove</strong> - Removes a row from the context dashboard</p>
+
+<pre><code>$ wizzy remove row ROW_NUMBER
+</code></pre>
+
+<p><em><code>ROW_NUMBER</code></em> represents row number on the dashboard in context.
+<em>For example, to delete 2nd row from your local json:</em></p>
+
+<pre><code>$ wizzy remove row 2
+</code></pre></li>
+
+<li><p><strong>extract</strong> - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use <code>insert</code> command to insert this row into any dashboard. Needs dashboard context to be set.</p>
+
+<pre><code>$ wizzy extract row SOURCE_ROW_NUMBER ROW_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy extract row 2 memory-stats-row
+</code></pre></li>
+
+<li><p><strong>insert</strong> - Inserts an extracted row from rows directory into a dashboard. If <code>DASHBOARD_SLUG</code> is not specified then this command will insert the row in context dashboard.</p>
+
+<pre><code>$ wizzy insert row ROW_NAME &lt;DESTINATION_SLUG&gt;
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy insert row memory-stats-row
+$ wizzy insert row memory-stats-row cassandra-stats
+</code></pre></li>
+</ul>
 
 
       

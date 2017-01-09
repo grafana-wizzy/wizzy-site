@@ -402,24 +402,57 @@
                 <h1>Datasource Commands</h1>
                 
 
+<p>Following commands are used to interact with Grafana datasources.</p>
+
+<ul>
+<li><p><strong>show</strong> - Shows you all the Grafana datasources in JSON format.
+To see all datasources, use the following command:</p>
+
 <pre><code>$ wizzy show datasources
-	- shows you all the datasources in JSON
-
-$ wizzy import datasources
-	- imports all datasources in JSON format and store under datasources directory
-
-$ wizzy export datasources
-	- export all local datasources to Grafana
-
-$ wizzy import datasource DATASOURCE_NAME
-	- imports a datasource in JSON format and store under datasources directory
-
-$ wizzy show datasource DATASOURCE_NAME
-	- shows you a datasource in JSON
-
-$ wizzy export datasource DATASOURCE_NAME
-	- exports local datasource JSON object to replace the one in Grafana
 </code></pre>
+
+<p>To see a single datasource, use the following command:</p>
+
+<pre><code>$ wizzy show datasource DATASOURCE_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy import datasource my-graphite
+</code></pre></li>
+
+<li><p><strong>import</strong> - Imports datasources in JSON format and store under datasources directory
+For importing all datasourcources, use the following command:</p>
+
+<pre><code>$ wizzy import datasources
+</code></pre>
+
+<p>And for importing only 1 datasource, use the following command:</p>
+
+<pre><code>$ wizzy import datasource DATASOURCE_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy import datasource my-graphite
+</code></pre></li>
+
+<li><p><strong>export</strong> - Export datasources from local to Grafana installation
+For exporting all datasources:</p>
+
+<pre><code>$ wizzy export datasources
+</code></pre>
+
+<p>For exporting a single datasource:</p>
+
+<pre><code>$ wizzy export datasource DATASOURCE_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy export datasource my-graphite
+</code></pre></li>
+</ul>
 
 
       

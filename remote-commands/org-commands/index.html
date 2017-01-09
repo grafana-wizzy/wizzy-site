@@ -402,27 +402,71 @@
                 <h1>Org Commands</h1>
                 
 
+<p>Following commands are used to interact with Grafana organizations.</p>
+
+<ul>
+<li><p><strong>import</strong> - Import orgs from Grafana to local orgs directory.
+For importing all orgs:</p>
+
 <pre><code>$ wizzy import orgs
-	- imports all orgs in JSON format and stores under orgs directory
-
-$ wizzy import org ORG_ID
-	- imports an org with ORG_ID
-
-$ wizzy create org ORG_NAME
-	- creates an org in Grafana
-
-$ wizzy show orgs
-	- shows all orgs from Grafana
-
-$ wizzy show org ORG_ID
-	- shows an org from Grafana
-
-$ wizzy delete org ORG_ID
-	- deletes an org in Grafana
-
-$ wizzy export org ORG_ID
-	- exports an org from local JSON to replace the one in Grafana
 </code></pre>
+
+<p>For importing one org</p>
+
+<pre><code>$ wizzy import org ORG_ID
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy import org 2
+</code></pre></li>
+
+<li><p><strong>create</strong> - Creates an org in Grafana</p>
+
+<pre><code>$ wizzy create org ORG_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy create org my-new-org
+</code></pre></li>
+
+<li><p><strong>show</strong> - Shows org json object.
+Shows all orgs:</p>
+
+<pre><code>$ wizzy show orgs
+</code></pre>
+
+<p>Shows only 1 org:</p>
+
+<pre><code>$ wizzy show org ORG_ID
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy show org 3
+</code></pre></li>
+
+<li><p><strong>delete</strong> - Deletes an org in Grafana.</p>
+
+<pre><code>$ wizzy delete org ORG_ID
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy delete org 3
+</code></pre></li>
+
+<li><p><strong>export</strong> - Exports an org from your local directory into Grafana.</p>
+
+<pre><code>$ wizzy export org ORG_ID
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy export org 3
+</code></pre></li>
+</ul>
 
 
       

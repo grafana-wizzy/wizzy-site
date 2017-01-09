@@ -18,7 +18,7 @@
 
 &lt;h1 id=&#34;remote-commands&#34;&gt;Remote Commands&lt;/h1&gt;
 
-&lt;p&gt;These commands operates directly on your Grafana installation via API, so please use them carefully. Commands for importing, listing, exporting and deleting dashboards, orgs, datasources are part of this set of commands.These commands are usually used when you have completed local changes and now the changes are ready to be pushed to your Grafana installation.&lt;/p&gt;
+&lt;p&gt;These commands operates directly on your Grafana installation via API, so please use them carefully. Commands for importing, listing, exporting and deleting dashboards, orgs, datasources are part of this set of commands.These commands are usually used when you have completed local changes and now the changes are ready to be pushed to your Grafana installation. Commands such as &lt;code&gt;import,export,list,show,delete&lt;/code&gt; are examples of remote commands.&lt;/p&gt;
 
 &lt;p&gt;Dashboard Context(which is explained in local commands section) is not supported by these commands currently.&lt;/p&gt;
 </description>
@@ -111,24 +111,57 @@ For exporting all local dashboards to Grafana, use the following command:&lt;/p&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/datasource-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy show datasources
-	- shows you all the datasources in JSON
+      <description>&lt;p&gt;Following commands are used to interact with Grafana datasources.&lt;/p&gt;
 
-$ wizzy import datasources
-	- imports all datasources in JSON format and store under datasources directory
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Shows you all the Grafana datasources in JSON format.
+To see all datasources, use the following command:&lt;/p&gt;
 
-$ wizzy export datasources
-	- export all local datasources to Grafana
-
-$ wizzy import datasource DATASOURCE_NAME
-	- imports a datasource in JSON format and store under datasources directory
-
-$ wizzy show datasource DATASOURCE_NAME
-	- shows you a datasource in JSON
-
-$ wizzy export datasource DATASOURCE_NAME
-	- exports local datasource JSON object to replace the one in Grafana
+&lt;pre&gt;&lt;code&gt;$ wizzy show datasources
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To see a single datasource, use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show datasource DATASOURCE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import datasource my-graphite
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;import&lt;/strong&gt; - Imports datasources in JSON format and store under datasources directory
+For importing all datasourcources, use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import datasources
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And for importing only 1 datasource, use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import datasource DATASOURCE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import datasource my-graphite
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;export&lt;/strong&gt; - Export datasources from local to Grafana installation
+For exporting all datasources:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export datasources
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For exporting a single datasource:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export datasource DATASOURCE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export datasource my-graphite
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -138,27 +171,71 @@ $ wizzy export datasource DATASOURCE_NAME
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/org-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy import orgs
-	- imports all orgs in JSON format and stores under orgs directory
+      <description>&lt;p&gt;Following commands are used to interact with Grafana organizations.&lt;/p&gt;
 
-$ wizzy import org ORG_ID
-	- imports an org with ORG_ID
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;import&lt;/strong&gt; - Import orgs from Grafana to local orgs directory.
+For importing all orgs:&lt;/p&gt;
 
-$ wizzy create org ORG_NAME
-	- creates an org in Grafana
-
-$ wizzy show orgs
-	- shows all orgs from Grafana
-
-$ wizzy show org ORG_ID
-	- shows an org from Grafana
-
-$ wizzy delete org ORG_ID
-	- deletes an org in Grafana
-
-$ wizzy export org ORG_ID
-	- exports an org from local JSON to replace the one in Grafana
+&lt;pre&gt;&lt;code&gt;$ wizzy import orgs
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For importing one org&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import org ORG_ID
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import org 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;create&lt;/strong&gt; - Creates an org in Grafana&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy create org ORG_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy create org my-new-org
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Shows org json object.
+Shows all orgs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show orgs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Shows only 1 org:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show org ORG_ID
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show org 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;delete&lt;/strong&gt; - Deletes an org in Grafana.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete org ORG_ID
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete org 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;export&lt;/strong&gt; - Exports an org from your local directory into Grafana.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export org ORG_ID
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy export org 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

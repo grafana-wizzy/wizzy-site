@@ -18,16 +18,21 @@
 
 &lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;
 
-&lt;p&gt;These commands operates on local json file based dashboards and support Dashboard Context.&lt;/p&gt;
+&lt;p&gt;These commands operates on local json files representing dashboards, orgs, datasources, panels, rows, template-variable, etc and support Dashboard Context. Commands for moving rows and panels from one dashboard to another are part of this set of commands. These are the most powerful commands of wizzy. Commands such as &lt;code&gt;summarize, move, copy, remove, change&lt;/code&gt; are examples of local commands.&lt;/p&gt;
 
-&lt;h3 id=&#34;dashboard-context&#34;&gt;Dashboard context&lt;/h3&gt;
+&lt;h2 id=&#34;dashboard-context&#34;&gt;Dashboard context&lt;/h2&gt;
 
 &lt;p&gt;A user can set the dashboard context in wizzy by the following command so that the wizzy cli is aware about the local dashboard on which it should operate. This is an optional setting for some commands and mandatory for other commands, which makes wizzy cli more intuitive and user-friendly.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set context dashboard DASHBOARD_SLUG
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Note: Once context is set, wizzy will use this dashboard as default if no dashboard is supplied. It will be mentioned in the documentation where setting dashboard context is required.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set context dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: Once dashboard context is set, wizzy will use this dashboard as default if no dashboard is supplied. It will be mentioned in the documentation where setting dashboard context is required.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -37,14 +42,30 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-commands/</guid>
-      <description>&lt;p&gt;These commands impacts the dashboard wide changes&lt;/p&gt;
+      <description>&lt;p&gt;Following commands are used to interact with json files stored locally under dashboards directory.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy summarize dashboard DASHBOARD_SLUG
-	- prints summary of a local dashboard
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;summarize&lt;/strong&gt; - Prints a summarized view of a local dashboard. &lt;code&gt;DASHBOARD_SLUG&lt;/code&gt; is optional as the local commands support dashboard context. So, if you have saved dashboard context, you do not need to specifiy the SLUG for the dashboard to use the following command.&lt;/p&gt;
 
-$ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
-	- changes OLD_DATASOURCE to NEW_DATASOURCE for all panels on a dashboard
+&lt;pre&gt;&lt;code&gt;$ wizzy summarize dashboard &amp;lt;DASHBOARD_SLUG&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy summarize dashboard
+$ wizzy summarize dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;change&lt;/strong&gt; - Changes a datasource name in all the panels on a dashboard. This commands needs dashboard context as it will operate on the dashboard which is set in the context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy change panels datasource old-graphite new-graphite
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -54,30 +75,69 @@ $ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy copy row SOURCE_ROW_NUMBER DESTINATION_ROW_NUMBER
-	- copies a row from one position to another on the same dashboard
+      <description>&lt;p&gt;Following commands are used to operate on rows in json files stored locally under dashboards/rows directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
-$ wizzy copy row SOURCE_ROW_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER
-	- copies a row from one dashboard to another dashboard
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;copy&lt;/strong&gt; - Copies a row from one position to another. This command can be used to copy a row on the same dashboard and as well as to copy a row to other dashboards.&lt;/p&gt;
 
-$ wizzy move row SOURCE_ROW_NUMBER DESTINATION_ROW_NUMBER
-	- moves a row from one position to another on the same dashboard
-
-$ wizzy move row SOURCE_ROW_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER
-	- moves a row from one dashboard to another dashboard
-
-$ wizzy remove row SOURCE_ROW_NUMBER
-	- removes a row from the current dashboard
-
-$ wizzy extract row SOURCE_ROW_NUMBER
-  - removes a row from the current dashboard and saves it under rows directory
-
-$ wizzy insert row ROW_NAME
-  - inserts a row from the rows directory to context dashboard
-
-$ wizzy insert row ROW_NAME DESTINATION_SLUG
-	- inserts a row from the rows directory to a dashboard
+&lt;pre&gt;&lt;code&gt;$ wizzy copy row SOURCE DESTINATION
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;SOURCE&lt;/code&gt;&lt;/em&gt; represents row number on the dashboard in context. Should be a &lt;code&gt;ROW_NUMBER&lt;/code&gt;.
+&lt;em&gt;&lt;code&gt;DESTINATION&lt;/code&gt;&lt;/em&gt; can represent a row number on the same dashboard or on a different dashboard. Can be a &lt;code&gt;ROW_NUMBER&lt;/code&gt; or &lt;code&gt;DASHBOARD_SLUG.ROW_NUMBER&lt;/code&gt;.
+&lt;em&gt;For example, If you want to copy 2nd row as 4th row in the context dashboard, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy row 2 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, If you want to copy 2nd row from the context dashboard as 1st row in some other dashboard, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy row 2 cpu-stats.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;move&lt;/strong&gt; - Moves a row from one position to another. This command can be used to move a row on the same dashboard and as well as to move a row to other dashboards.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move row SOURCE DESTINATION
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move row 2 4
+$ wizzy move row 2 cpu-stats.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;remove&lt;/strong&gt; - Removes a row from the context dashboard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove row ROW_NUMBER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;ROW_NUMBER&lt;/code&gt;&lt;/em&gt; represents row number on the dashboard in context.
+&lt;em&gt;For example, to delete 2nd row from your local json:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove row 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert this row into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract row SOURCE_ROW_NUMBER ROW_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract row 2 memory-stats-row
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;insert&lt;/strong&gt; - Inserts an extracted row from rows directory into a dashboard. If &lt;code&gt;DASHBOARD_SLUG&lt;/code&gt; is not specified then this command will insert the row in context dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert row ROW_NAME &amp;lt;DESTINATION_SLUG&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert row memory-stats-row
+$ wizzy insert row memory-stats-row cassandra-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -146,8 +206,13 @@ $ wizzy insert temp-var TEMP_VAR_NAME DASHBOARD_SLUG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/datasource-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy summarize datasources
-	- prints summary of all local datasources
+      <description>&lt;p&gt;Following commands are used to interact with json files stored locally under datasources directory.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;summarize&lt;/strong&gt; - Prints a summary of all datasources from your datasources directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy summarize datasources
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -158,8 +223,13 @@ $ wizzy insert temp-var TEMP_VAR_NAME DASHBOARD_SLUG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/org-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy summarize orgs
-	- prints summary of all local orgs
+      <description>&lt;p&gt;Following commands are used to interact with json files stored locally under orgs directory.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;summarize&lt;/strong&gt; - Prints a summary of all organizations from your orgs directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy summarize orgs
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

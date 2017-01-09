@@ -114,7 +114,7 @@ $ cd DIRECTORY_NAME
 $ cd grafana-entities
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Initialize git repo in your grafana-entities directory. Its an optional step and should be used if you need version control for your Grafana entities such as dashboards, datasources, etc.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Best practice - Initialize git repo in your grafana-entities directory. Its an optional step and should be used if you need version control for your Grafana entities such as dashboards, datasources, etc.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git init
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
