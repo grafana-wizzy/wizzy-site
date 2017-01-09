@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wizzy - cli for Grafana</title>
-    <link>https://utkarshcmu.github.io/wizzy/index.xml</link>
+    <link>https://utkarshcmu.github.io/wizzy-site/index.xml</link>
     <description>Recent content on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://utkarshcmu.github.io/wizzy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://utkarshcmu.github.io/wizzy-site/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Configuration</title>
-      <link>https://utkarshcmu.github.io/wizzy/home/configuration/</link>
+      <link>https://utkarshcmu.github.io/wizzy-site/home/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy/home/configuration/</guid>
+      <guid>https://utkarshcmu.github.io/wizzy-site/home/configuration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Installation</title>
-      <link>https://utkarshcmu.github.io/wizzy/home/installation/</link>
+      <link>https://utkarshcmu.github.io/wizzy-site/home/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy/home/installation/</guid>
+      <guid>https://utkarshcmu.github.io/wizzy-site/home/installation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Store Dashboards in Github</title>
-      <link>https://utkarshcmu.github.io/wizzy/tutorials/store-dashboards-in-github/</link>
+      <link>https://utkarshcmu.github.io/wizzy-site/tutorials/store-dashboards-in-github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy/tutorials/store-dashboards-in-github/</guid>
+      <guid>https://utkarshcmu.github.io/wizzy-site/tutorials/store-dashboards-in-github/</guid>
       <description>&lt;p&gt;Learn how to store dashboards in Github&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Home</title>
-      <link>https://utkarshcmu.github.io/wizzy/home/</link>
+      <link>https://utkarshcmu.github.io/wizzy-site/home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy/home/</guid>
+      <guid>https://utkarshcmu.github.io/wizzy-site/home/</guid>
       <description>
 
 &lt;h3 id=&#34;home&#34;&gt;Home&lt;/h3&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>Tutorials</title>
-      <link>https://utkarshcmu.github.io/wizzy/tutorials/</link>
+      <link>https://utkarshcmu.github.io/wizzy-site/tutorials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy/tutorials/</guid>
+      <guid>https://utkarshcmu.github.io/wizzy-site/tutorials/</guid>
       <description>
 
 &lt;h3 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h3&gt;
