@@ -18,7 +18,7 @@
 
 &lt;h1 id=&#34;external-commands&#34;&gt;External Commands&lt;/h1&gt;
 
-&lt;p&gt;These commands interacts with external platforms such as Grafana.net, S3, etc.&lt;/p&gt;
+&lt;p&gt;These commands interacts with external platforms such as Grafana.net, S3, etc. You can upload, store and download Grafana dashboards from AWS S3. Also, you can use these commands to search and download dashboards from Grafana.net community.&lt;/p&gt;
 </description>
     </item>
     
@@ -30,53 +30,69 @@
       <guid>https://utkarshcmu.github.io/wizzy-site/general-commands/</guid>
       <description>
 
-&lt;h3 id=&#34;help-commands&#34;&gt;Help Commands&lt;/h3&gt;
+&lt;h1 id=&#34;help-commands&#34;&gt;Help Commands&lt;/h1&gt;
 
 &lt;p&gt;Help commands lets you explore wizzy&amp;rsquo;s info, health, configuration.&lt;/p&gt;
 
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;conf&lt;/strong&gt; - Shows wizzy configuration&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;$ wizzy conf
-	- shows wizzy configuration
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-$ wizzy init
-	- only to be used while setting up wizzy for the first time
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;init&lt;/strong&gt; - Only to be used while setting up wizzy for the first time or upgrading wizzy. It creates all the required directories needed for wizzy.&lt;/p&gt;
 
-$ wizzy status
+&lt;pre&gt;&lt;code&gt;$ wizzy init
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-$ wizzy help
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;status&lt;/strong&gt; - Shows wizzy status.&lt;/p&gt;
 
-$ wizzy version
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;$ wizzy status
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;h3 id=&#34;configuration-commands&#34;&gt;Configuration commands&lt;/h3&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;help&lt;/strong&gt; - Shows wizzy help.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy help
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;version&lt;/strong&gt; - Shows wizzy version.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy version
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;configuration-commands&#34;&gt;Configuration commands&lt;/h1&gt;
 
 &lt;p&gt;wizzy properties can be set in wizzy by running following commands, if you have not set already:&lt;/p&gt;
 
+&lt;h3 id=&#34;set-grafana-properties&#34;&gt;Set Grafana properties:&lt;/h3&gt;
+
 &lt;pre&gt;&lt;code&gt;$ wizzy set grafana url GRAFANA_URL
-
 $ wizzy set grafana username USERNAME
-
 $ wizzy set grafana password PASSWORD
-
 $ wizzy set grafana debug_api true
-	- an optional setting to debug Grafana API calls, `false` by default
+&lt;/code&gt;&lt;/pre&gt;
 
-$ wizzy set context dashboard DASHBOARD_SLUG
+&lt;p&gt;&lt;em&gt;Note: There is an optional setting to debug Grafana API calls, &lt;code&gt;false&lt;/code&gt; by default.&lt;/em&gt;&lt;/p&gt;
 
-$ wizzy set clip render_height 600
+&lt;h3 id=&#34;set-dashboard-context&#34;&gt;Set Dashboard context:&lt;/h3&gt;
 
+&lt;pre&gt;&lt;code&gt;$ wizzy set context dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;set-clip-command-properties&#34;&gt;Set Clip command properties:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set clip render_height 600
 $ wizzy set clip render_width 600
-
 $ wizzy set clip render_timeout 10
-
 $ wizzy set clip canvas_width 800
-
 $ wizzy set clip canvas_height 600
-
 $ wizzy set clip delay 500
-	- sets delay between each snapshot, lower delay means short video
+&lt;/code&gt;&lt;/pre&gt;
 
-$ wizzy set s3 bucket_name
+&lt;h3 id=&#34;set-s3-properties&#34;&gt;Set S3 properties:&lt;/h3&gt;
 
+&lt;pre&gt;&lt;code&gt;$ wizzy set s3 bucket_name
 $ wizzy set s3 path
 &lt;/code&gt;&lt;/pre&gt;
 </description>
@@ -158,27 +174,48 @@ $ wizzy set s3 path
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/s3-commands/</guid>
-      <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow.&lt;/p&gt;
+      <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow. Please note that these external commands does not support Dashboard context as they interact with external systems.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Have your aws config file under ~/.aws/config (standard aws config location).&lt;/li&gt;
-&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands.&lt;/li&gt;
+&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands. Please check &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands&#34;&gt;General commands&lt;/a&gt; to see examples.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;And then you can use the following commands to upload and download your dashboards to and from S3.&lt;/p&gt;
 
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;upload&lt;/strong&gt; - Uploads dashboards to AWS S3.
+For uploading all dashboards:&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboards
-  - uploads all dashboards to S3
-
-$ wizzy download from-s3 dashboards
-  - downloads all dashboards from S3 to local
-
-$ wizzy upload to-s3 dashboard DASHBOARD_SLUG
-  - uploads a single dashboard to S3
-
-$ wizzy download from-s3 dashboard DASHBOARD_SLUG
-  - downloads a single dashboard from S3
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For uploading only 1 dashboard:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;download&lt;/strong&gt; - Downloads dashboards from AWS S3.
+For downloading all dashboards:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-s3 dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For downloading only 1 dashboard:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-s3 dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-s3 dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -253,7 +290,9 @@ For importing all dashboards from Grafana, use following command:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy import dashboard cpu-stats
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: wizzy removes &lt;code&gt;version&lt;/code&gt; field from the imported dashboard before saving it to the disk as version is something what Grafana takes care of for a dashboard.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;export&lt;/strong&gt; - Exports local dashboards to be saved as a remote dashboard and go live in your Grafana installation. This will replace an existing dashboard or creates a new dashboard in Grafana. Please use this carefully.
 For exporting all local dashboards to Grafana, use the following command:&lt;/p&gt;
@@ -362,15 +401,34 @@ For exporting all datasources:&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/gnet-commands/</guid>
-      <description>&lt;p&gt;wizzy can interact now with Grafana.net. It can list and download dashboards from Grafana.net. Commands available for interaction with Grafana.net are listed below:&lt;/p&gt;
+      <description>&lt;p&gt;For listing/downloading dashboards from Grafana.net community following commands can be used. There is no extra configurations needed for these commands.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Lists all the dashboards and if filter is present then filters out the dashboards according to it.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards &amp;lt;FILTER&amp;gt;
-  - lists all the dashboards and if filter is present then filters out the dashboards according to it.
-  - for example: &#39;wizzy list gnet dashboards ds=graphite&#39; lists all dashboards with datasource = graphite.
-  
-$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
-  - Download a dashboard json from Grafana.net and stores under dashboards directory.
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, for listing all Grafana.net dashboards, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, for listing all Grafana.net dashboards with prometheus as datasource, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards ds=prometheus
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;download&lt;/strong&gt; - Downloads a dashbord json from Grafana.net and stores under dashboards directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-gnet dashboard 328 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -600,7 +658,7 @@ $ wizzy move row 2 cpu-stats.1
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert this row into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy extract row SOURCE_ROW_NUMBER ROW_NAME
+&lt;pre&gt;&lt;code&gt;$ wizzy extract row ROW_NUMBER ROW_NAME
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
@@ -619,6 +677,8 @@ $ wizzy move row 2 cpu-stats.1
 $ wizzy insert row memory-stats-row cassandra-stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;_Note: ROW&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

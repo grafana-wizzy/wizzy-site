@@ -402,15 +402,34 @@
                 <h1>Grafana.net Commands</h1>
                 
 
-<p>wizzy can interact now with Grafana.net. It can list and download dashboards from Grafana.net. Commands available for interaction with Grafana.net are listed below:</p>
+<p>For listing/downloading dashboards from Grafana.net community following commands can be used. There is no extra configurations needed for these commands.</p>
+
+<ul>
+<li><p><strong>list</strong> - Lists all the dashboards and if filter is present then filters out the dashboards according to it.</p>
 
 <pre><code>$ wizzy list gnet dashboards &lt;FILTER&gt;
-  - lists all the dashboards and if filter is present then filters out the dashboards according to it.
-  - for example: 'wizzy list gnet dashboards ds=graphite' lists all dashboards with datasource = graphite.
-  
-$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
-  - Download a dashboard json from Grafana.net and stores under dashboards directory.
 </code></pre>
+
+<p><em>For example, for listing all Grafana.net dashboards, use:</em></p>
+
+<pre><code>$ wizzy list gnet dashboards
+</code></pre>
+
+<p><em>For example, for listing all Grafana.net dashboards with prometheus as datasource, use:</em></p>
+
+<pre><code>$ wizzy list gnet dashboards ds=prometheus
+</code></pre></li>
+
+<li><p><strong>download</strong> - Downloads a dashbord json from Grafana.net and stores under dashboards directory.</p>
+
+<pre><code>$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy download from-gnet dashboard 328 3
+</code></pre></li>
+</ul>
 
 
       

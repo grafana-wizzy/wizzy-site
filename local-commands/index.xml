@@ -119,7 +119,7 @@ $ wizzy move row 2 cpu-stats.1
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert this row into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy extract row SOURCE_ROW_NUMBER ROW_NAME
+&lt;pre&gt;&lt;code&gt;$ wizzy extract row ROW_NUMBER ROW_NAME
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
@@ -138,6 +138,8 @@ $ wizzy move row 2 cpu-stats.1
 $ wizzy insert row memory-stats-row cassandra-stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;_Note: ROW&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -147,30 +149,75 @@ $ wizzy insert row memory-stats-row cassandra-stats
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/panel-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy copy panel SOURCE_ROW.PANEL_NUMBER DESTINATION_ROW_NUMBER.PANEL_NUMBER
-	- copies a panel from current row to another row on the same dashboard
+      <description>&lt;p&gt;Following commands are used to operate on panels in json files stored locally under dashboards/panels directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
-$ wizzy copy panel SOURCE_ROW.PANEL_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER
-	- copies a panel from current dashboard to another dashboard
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;copy&lt;/strong&gt; - Copies a panel from one position to another. This command can be used to copy a panel on the same dashboard and as well as to copy a panel to other dashboards.&lt;/p&gt;
 
-$ wizzy move panel SOURCE_ROW.PANEL_NUMBER DESTINATION_ROW_NUMBER.PANEL_NUMBER
-	- moves a panel from current row to another row on the same dashboard
-
-$ wizzy move panel SOURCE_ROW.PANEL_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER
-	- moves a panel from current dashboard to another dashboard
-
-$ wizzy remove panel SOURCE_ROW.PANEL_NUMBER
-	- removes a panel from current dashboard
-
-$ wizzy extract panel SOURCE_ROW_NUMBER.PANEL_NUMBER PANEL_NAME
-  - removes a panel from the current dashboard and saves it under panels directory
-
-$ wizzy insert panel PANEL_NAME ROW_NUMBER
-  - inserts a panel from the panels directory to a row in context dashboard
-
-$ wizzy insert panel ROW_NAME DESTINATION_SLUG.ROW_NUMBER
-	- inserts a panel from the panels directory to a row in a dashboard
+&lt;pre&gt;&lt;code&gt;$ wizzy copy panel SOURCE DESTINATION
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;SOURCE&lt;/code&gt;&lt;/em&gt; represents panel number on a row in the context dashboard. Should be a &lt;code&gt;ROW_NUMBER.PANEL_NUMBER&lt;/code&gt;.
+&lt;em&gt;&lt;code&gt;DESTINATION&lt;/code&gt;&lt;/em&gt; can represent a panel number on the same dashboard or on a different dashboard. Can be a &lt;code&gt;PANEL_NUMBER&lt;/code&gt;, &lt;code&gt;ROW_NUMBER.PANEL_NUMBER&lt;/code&gt; or &lt;code&gt;DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER&lt;/code&gt;.
+&lt;em&gt;For example, If you want to copy 2nd panel from 1st row as 4th panel in 5th row in the context dashboard, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy panel 1.2 5.4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;_For example, If you want to copy 2nd panel from 1st row as 4th panel in 5th row in another dashboard, use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy panel 1.2 cpu-stats.5.4
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;move&lt;/strong&gt; - Moves a panel from one position to another. This command can be used to move a panel on the same dashboard and as well as to move a panel to other dashboards.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move panel SOURCE DESTINATION
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move panel 1.2 5.4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move panel 1.2 cpu-stats.5.4
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;remove&lt;/strong&gt; - Removes a panel from the context dashboard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove panel PANEL_NUMBER.ROW_NUMBER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, to delete 1st panel from 2nd row from your local json:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove panel 2.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies panel json object and saves it as a separate file under panels directory. This command is useful if you want to re-use this panel in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert this panel into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract panel ROW_NUMBER.PANEL_NUMBER PANEL_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract panel 2.1 connections-panel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;insert&lt;/strong&gt; - Inserts an extracted panel from panels directory into a dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert panel &amp;lt;DESTINATION&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;DESTINATION&lt;/code&gt;&lt;/em&gt; can represent a row number on the same dashboard or on a different dashboard. Can be a &lt;code&gt;ROW_NUMBER&lt;/code&gt; or &lt;code&gt;DASHBOARD_SLUG.ROW_NUMBER&lt;/code&gt;. If &lt;code&gt;DASHBOARD_SLUG&lt;/code&gt; is not specified then this command will insert the row in context dashboard.
+&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert panel connections-panel 3
+$ wizzy insert panel connections-panel cassandra-stats.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;_Note: PANEL&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -180,23 +227,64 @@ $ wizzy insert panel ROW_NAME DESTINATION_SLUG.ROW_NUMBER
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/temp-var-commands/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;$ wizzy copy temp-var SOURCE_TEMP-VAR_NUMBER DESTINATION_DASHBOARD_SLUG.TEMP-VAR_NUMBER
-	- copies a template variable from current dashboard to another dashboard
+      <description>&lt;p&gt;Following commands are used to operate on template variables in json files stored locally under dashboards/temp-vars directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
-$ wizzy move temp-var SOURCE_TEMP-VAR_NUMBER DESTINATION_DASHBOARD_SLUG.TEMP-VAR_NUMBER
-	- moves a template variable from current dashboard to another dashboard
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;copy&lt;/strong&gt; - Copies a template variable from context dashboard to another.&lt;/p&gt;
 
-$ wizzy remove temp-var SOURCE_TEMP-VAR_NUMBER
-	- removes a template variable from current dashboard
-
-$ wizzy extract temp-var SOURCE_TEMP-VAR_NUMBER TEMP_VAR_NAME
-	- copies a template variable from current dashboard to a json file under temp-vars directory for resuse
-
-$ wizzy insert temp-var TEMP_VAR_NAME DASHBOARD_SLUG
-	- copies a template variable from JSON file to the specified dashboard otherwise to the context dashboard, if not specified
+&lt;pre&gt;&lt;code&gt;$ wizzy copy temp-var SOURCE DESTINATION
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Note: wizzy removes &lt;code&gt;version&lt;/code&gt; field from the imported dashboard before saving it to the disk as version is something what Grafana takes care of for a dashboard. ROW_NUMBER and PANEL_NUMBER starts from 1.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;SOURCE&lt;/code&gt;&lt;/em&gt; represents template variable number in the context dashboard. Should be a &lt;code&gt;TEMP-VAR_NUMBER&lt;/code&gt;.
+&lt;em&gt;&lt;code&gt;DESTINATION&lt;/code&gt;&lt;/em&gt; represents &lt;code&gt;DASHBOARD_SLUG.TEMP-VAR_NUMBER&lt;/code&gt;.
+&lt;em&gt;For example, If you want to copy 2nd template variable from context dashboard to cpu-stats dashboard at 1st position, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy temp-var 2 cpu-stats.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;move&lt;/strong&gt; - Moves a template variable from context dashboard to another.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move temp-var SOURCE DESTINATION
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move temp-var 2 cpu-stats.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;remove&lt;/strong&gt; - Removes a template variable from the context dashboard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove temp-var TEMP-VAR_NUMBER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove temp-var 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies template variable json object and saves it as a separate file under temp-vars directory. This command is useful if you want to re-use this template variable in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert this template variable into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract temp-var TEMP-VAR_NUMBER TEMP-VAR_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract temp-var 2 var-application
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;insert&lt;/strong&gt; - Inserts an extracted template variable from temp-vars directory into a dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert temp-vae var-application &amp;lt;DASHBOARD_SLUG&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert temp-var var-application
+$ wizzy insert temp-var var-application cassandra-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;_Note: TEMP-VAR&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

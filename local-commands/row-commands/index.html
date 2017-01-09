@@ -446,7 +446,7 @@ $ wizzy move row 2 cpu-stats.1
 
 <li><p><strong>extract</strong> - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use <code>insert</code> command to insert this row into any dashboard. Needs dashboard context to be set.</p>
 
-<pre><code>$ wizzy extract row SOURCE_ROW_NUMBER ROW_NAME
+<pre><code>$ wizzy extract row ROW_NUMBER ROW_NAME
 </code></pre>
 
 <p><em>For example:</em></p>
@@ -465,6 +465,8 @@ $ wizzy move row 2 cpu-stats.1
 $ wizzy insert row memory-stats-row cassandra-stats
 </code></pre></li>
 </ul>
+
+<p>_Note: ROW<em>NUMBER starts from 1.</em></p>
 
 
       

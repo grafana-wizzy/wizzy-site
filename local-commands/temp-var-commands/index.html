@@ -402,23 +402,64 @@
                 <h1>Template Variable Commands</h1>
                 
 
-<pre><code>$ wizzy copy temp-var SOURCE_TEMP-VAR_NUMBER DESTINATION_DASHBOARD_SLUG.TEMP-VAR_NUMBER
-	- copies a template variable from current dashboard to another dashboard
+<p>Following commands are used to operate on template variables in json files stored locally under dashboards/temp-vars directory. These commands need Dashboard Context. Please set Dashboard Context before using them.</p>
 
-$ wizzy move temp-var SOURCE_TEMP-VAR_NUMBER DESTINATION_DASHBOARD_SLUG.TEMP-VAR_NUMBER
-	- moves a template variable from current dashboard to another dashboard
+<ul>
+<li><p><strong>copy</strong> - Copies a template variable from context dashboard to another.</p>
 
-$ wizzy remove temp-var SOURCE_TEMP-VAR_NUMBER
-	- removes a template variable from current dashboard
-
-$ wizzy extract temp-var SOURCE_TEMP-VAR_NUMBER TEMP_VAR_NAME
-	- copies a template variable from current dashboard to a json file under temp-vars directory for resuse
-
-$ wizzy insert temp-var TEMP_VAR_NAME DASHBOARD_SLUG
-	- copies a template variable from JSON file to the specified dashboard otherwise to the context dashboard, if not specified
+<pre><code>$ wizzy copy temp-var SOURCE DESTINATION
 </code></pre>
 
-<p>Note: wizzy removes <code>version</code> field from the imported dashboard before saving it to the disk as version is something what Grafana takes care of for a dashboard. ROW_NUMBER and PANEL_NUMBER starts from 1.</p>
+<p><em><code>SOURCE</code></em> represents template variable number in the context dashboard. Should be a <code>TEMP-VAR_NUMBER</code>.
+<em><code>DESTINATION</code></em> represents <code>DASHBOARD_SLUG.TEMP-VAR_NUMBER</code>.
+<em>For example, If you want to copy 2nd template variable from context dashboard to cpu-stats dashboard at 1st position, use:</em></p>
+
+<pre><code>$ wizzy copy temp-var 2 cpu-stats.1
+</code></pre></li>
+
+<li><p><strong>move</strong> - Moves a template variable from context dashboard to another.</p>
+
+<pre><code>$ wizzy move temp-var SOURCE DESTINATION
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy move temp-var 2 cpu-stats.1
+</code></pre></li>
+
+<li><p><strong>remove</strong> - Removes a template variable from the context dashboard</p>
+
+<pre><code>$ wizzy remove temp-var TEMP-VAR_NUMBER
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy remove temp-var 2
+</code></pre></li>
+
+<li><p><strong>extract</strong> - Copies template variable json object and saves it as a separate file under temp-vars directory. This command is useful if you want to re-use this template variable in many dashboards. Later you can use <code>insert</code> command to insert this template variable into any dashboard. Needs dashboard context to be set.</p>
+
+<pre><code>$ wizzy extract temp-var TEMP-VAR_NUMBER TEMP-VAR_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy extract temp-var 2 var-application
+</code></pre></li>
+
+<li><p><strong>insert</strong> - Inserts an extracted template variable from temp-vars directory into a dashboard.</p>
+
+<pre><code>$ wizzy insert temp-vae var-application &lt;DASHBOARD_SLUG&gt;
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy insert temp-var var-application
+$ wizzy insert temp-var var-application cassandra-stats
+</code></pre></li>
+</ul>
+
+<p>_Note: TEMP-VAR<em>NUMBER starts from 1.</em></p>
 
 
       

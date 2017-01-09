@@ -18,7 +18,7 @@
 
 &lt;h1 id=&#34;external-commands&#34;&gt;External Commands&lt;/h1&gt;
 
-&lt;p&gt;These commands interacts with external platforms such as Grafana.net, S3, etc.&lt;/p&gt;
+&lt;p&gt;These commands interacts with external platforms such as Grafana.net, S3, etc. You can upload, store and download Grafana dashboards from AWS S3. Also, you can use these commands to search and download dashboards from Grafana.net community.&lt;/p&gt;
 </description>
     </item>
     
@@ -28,27 +28,48 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/s3-commands/</guid>
-      <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow.&lt;/p&gt;
+      <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow. Please note that these external commands does not support Dashboard context as they interact with external systems.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Have your aws config file under ~/.aws/config (standard aws config location).&lt;/li&gt;
-&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands.&lt;/li&gt;
+&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands. Please check &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands&#34;&gt;General commands&lt;/a&gt; to see examples.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;And then you can use the following commands to upload and download your dashboards to and from S3.&lt;/p&gt;
 
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;upload&lt;/strong&gt; - Uploads dashboards to AWS S3.
+For uploading all dashboards:&lt;/p&gt;
+
 &lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboards
-  - uploads all dashboards to S3
-
-$ wizzy download from-s3 dashboards
-  - downloads all dashboards from S3 to local
-
-$ wizzy upload to-s3 dashboard DASHBOARD_SLUG
-  - uploads a single dashboard to S3
-
-$ wizzy download from-s3 dashboard DASHBOARD_SLUG
-  - downloads a single dashboard from S3
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For uploading only 1 dashboard:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;download&lt;/strong&gt; - Downloads dashboards from AWS S3.
+For downloading all dashboards:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-s3 dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For downloading only 1 dashboard:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-s3 dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-s3 dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -58,15 +79,34 @@ $ wizzy download from-s3 dashboard DASHBOARD_SLUG
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/gnet-commands/</guid>
-      <description>&lt;p&gt;wizzy can interact now with Grafana.net. It can list and download dashboards from Grafana.net. Commands available for interaction with Grafana.net are listed below:&lt;/p&gt;
+      <description>&lt;p&gt;For listing/downloading dashboards from Grafana.net community following commands can be used. There is no extra configurations needed for these commands.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Lists all the dashboards and if filter is present then filters out the dashboards according to it.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards &amp;lt;FILTER&amp;gt;
-  - lists all the dashboards and if filter is present then filters out the dashboards according to it.
-  - for example: &#39;wizzy list gnet dashboards ds=graphite&#39; lists all dashboards with datasource = graphite.
-  
-$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
-  - Download a dashboard json from Grafana.net and stores under dashboards directory.
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, for listing all Grafana.net dashboards, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, for listing all Grafana.net dashboards with prometheus as datasource, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards ds=prometheus
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;download&lt;/strong&gt; - Downloads a dashbord json from Grafana.net and stores under dashboards directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy download from-gnet dashboard 328 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

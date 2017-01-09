@@ -62,7 +62,9 @@ For importing all dashboards from Grafana, use following command:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy import dashboard cpu-stats
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: wizzy removes &lt;code&gt;version&lt;/code&gt; field from the imported dashboard before saving it to the disk as version is something what Grafana takes care of for a dashboard.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;export&lt;/strong&gt; - Exports local dashboards to be saved as a remote dashboard and go live in your Grafana installation. This will replace an existing dashboard or creates a new dashboard in Grafana. Please use this carefully.
 For exporting all local dashboards to Grafana, use the following command:&lt;/p&gt;

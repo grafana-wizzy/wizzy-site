@@ -402,30 +402,75 @@
                 <h1>Panel Commands</h1>
                 
 
-<pre><code>$ wizzy copy panel SOURCE_ROW.PANEL_NUMBER DESTINATION_ROW_NUMBER.PANEL_NUMBER
-	- copies a panel from current row to another row on the same dashboard
+<p>Following commands are used to operate on panels in json files stored locally under dashboards/panels directory. These commands need Dashboard Context. Please set Dashboard Context before using them.</p>
 
-$ wizzy copy panel SOURCE_ROW.PANEL_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER
-	- copies a panel from current dashboard to another dashboard
+<ul>
+<li><p><strong>copy</strong> - Copies a panel from one position to another. This command can be used to copy a panel on the same dashboard and as well as to copy a panel to other dashboards.</p>
 
-$ wizzy move panel SOURCE_ROW.PANEL_NUMBER DESTINATION_ROW_NUMBER.PANEL_NUMBER
-	- moves a panel from current row to another row on the same dashboard
-
-$ wizzy move panel SOURCE_ROW.PANEL_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER
-	- moves a panel from current dashboard to another dashboard
-
-$ wizzy remove panel SOURCE_ROW.PANEL_NUMBER
-	- removes a panel from current dashboard
-
-$ wizzy extract panel SOURCE_ROW_NUMBER.PANEL_NUMBER PANEL_NAME
-  - removes a panel from the current dashboard and saves it under panels directory
-
-$ wizzy insert panel PANEL_NAME ROW_NUMBER
-  - inserts a panel from the panels directory to a row in context dashboard
-
-$ wizzy insert panel ROW_NAME DESTINATION_SLUG.ROW_NUMBER
-	- inserts a panel from the panels directory to a row in a dashboard
+<pre><code>$ wizzy copy panel SOURCE DESTINATION
 </code></pre>
+
+<p><em><code>SOURCE</code></em> represents panel number on a row in the context dashboard. Should be a <code>ROW_NUMBER.PANEL_NUMBER</code>.
+<em><code>DESTINATION</code></em> can represent a panel number on the same dashboard or on a different dashboard. Can be a <code>PANEL_NUMBER</code>, <code>ROW_NUMBER.PANEL_NUMBER</code> or <code>DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER</code>.
+<em>For example, If you want to copy 2nd panel from 1st row as 4th panel in 5th row in the context dashboard, use:</em></p>
+
+<pre><code>$ wizzy copy panel 1.2 5.4
+</code></pre>
+
+<p>_For example, If you want to copy 2nd panel from 1st row as 4th panel in 5th row in another dashboard, use:</p>
+
+<pre><code>$ wizzy copy panel 1.2 cpu-stats.5.4
+</code></pre></li>
+
+<li><p><strong>move</strong> - Moves a panel from one position to another. This command can be used to move a panel on the same dashboard and as well as to move a panel to other dashboards.</p>
+
+<pre><code>$ wizzy move panel SOURCE DESTINATION
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy move panel 1.2 5.4
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy move panel 1.2 cpu-stats.5.4
+</code></pre></li>
+
+<li><p><strong>remove</strong> - Removes a panel from the context dashboard</p>
+
+<pre><code>$ wizzy remove panel PANEL_NUMBER.ROW_NUMBER
+</code></pre>
+
+<p><em>For example, to delete 1st panel from 2nd row from your local json:</em></p>
+
+<pre><code>$ wizzy remove panel 2.1
+</code></pre></li>
+
+<li><p><strong>extract</strong> - Copies panel json object and saves it as a separate file under panels directory. This command is useful if you want to re-use this panel in many dashboards. Later you can use <code>insert</code> command to insert this panel into any dashboard. Needs dashboard context to be set.</p>
+
+<pre><code>$ wizzy extract panel ROW_NUMBER.PANEL_NUMBER PANEL_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy extract panel 2.1 connections-panel
+</code></pre></li>
+
+<li><p><strong>insert</strong> - Inserts an extracted panel from panels directory into a dashboard.</p>
+
+<pre><code>$ wizzy insert panel &lt;DESTINATION&gt;
+</code></pre>
+
+<p><em><code>DESTINATION</code></em> can represent a row number on the same dashboard or on a different dashboard. Can be a <code>ROW_NUMBER</code> or <code>DASHBOARD_SLUG.ROW_NUMBER</code>. If <code>DASHBOARD_SLUG</code> is not specified then this command will insert the row in context dashboard.
+<em>For example:</em></p>
+
+<pre><code>$ wizzy insert panel connections-panel 3
+$ wizzy insert panel connections-panel cassandra-stats.3
+</code></pre></li>
+</ul>
+
+<p>_Note: PANEL<em>NUMBER starts from 1.</em></p>
 
 
       
