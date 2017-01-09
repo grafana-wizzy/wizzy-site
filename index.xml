@@ -129,18 +129,19 @@ $ wizzy set s3 path
       <guid>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</guid>
       <description>&lt;p&gt;There can be a lot of use cases where wizzy can be used and some of them which I can think of right now are listed below. If you would like to do any of the following tasks in Grafana, then &lt;code&gt;wizzy&lt;/code&gt; can help you accomplish them with its easy command line interface:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    1. Copy Grafana dashboards from one installation of Grafana to another.
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Copy, move Grafana dashboards from one installation of Grafana to another. For example, from your dev installtion to prod.&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-    2. Store Grafana dashboards, rows, panels, datasources, orgs and even template variables, etc. in Git.
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Store Grafana dashboards, rows, panels, datasources, orgs and even template variables, etc. in Git.&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-    3. Copy, move, remove, edit rows and panels either within a dashboard or between two dashboards.
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Copy, move, remove, edit rows and panels either within a dashboard or between two dashboards.&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-    4. Upload/Store/Download Grafana dashboards from and to AWS S3 respectively.
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Upload/Store/Download Grafana dashboards from and to AWS S3 respectively.&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-    5. Search/Download Grafana.net community dashboards in a single command.
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Search/Download Grafana.net community dashboards in a single command.&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-    6. Generate 8 second GIFs for any Grafana dashboard with last 24 hours of data for your presentations.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Generate 8 second GIFs for any Grafana dashboard with last 24 hours of data for your presentations.&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Feel free to add more use cases of &lt;code&gt;wizzy&lt;/code&gt;.&lt;/p&gt;
 </description>
