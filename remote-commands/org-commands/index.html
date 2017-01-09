@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Use cases</title>
+    <title>Org Commands</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/home/use-cases/">
+  <body class="" data-url="/wizzy-site/remote-commands/org-commands/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -78,7 +78,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/wizzy-site/home/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/home/">
         <a href="/wizzy-site/home/">
           <span>
             
@@ -92,7 +92,7 @@
           
           
           
-            <li class="dd-item active" data-nav-id="/wizzy-site/home/use-cases/">
+            <li class="dd-item " data-nav-id="/wizzy-site/home/use-cases/">
               <a href="/wizzy-site/home/use-cases/">
                 <span>Use cases     </i></span>
               </a>
@@ -136,7 +136,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/remote-commands/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/remote-commands/">
         <a href="/wizzy-site/remote-commands/">
           <span>
             
@@ -166,7 +166,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/remote-commands/org-commands/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/remote-commands/org-commands/">
               <a href="/wizzy-site/remote-commands/org-commands/">
                 <span>Org Commands     </i></span>
               </a>
@@ -379,19 +379,19 @@
                   
                 
                   
+                
+                  
+                
+                  
                     
                     
-                <a href="/wizzy-site/home/" itemprop="url"><span itemprop="title">Home</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/wizzy-site/remote-commands/" itemprop="url"><span itemprop="title">Remote Commands</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                  
-                
-                  
-                
-                <span itemprop="title"> Use cases</span>
+                <span itemprop="title"> Org Commands</span>
               </div>
               
 
@@ -399,20 +399,30 @@
             
     	        <div id="body-inner">
                 
-                <h1>Use cases</h1>
+                <h1>Org Commands</h1>
                 
 
-<p>If you would like to do the following in Grafana, then <code>wizzy</code> is a great command line tools which can accomplish the following tasks with ease:</p>
+<pre><code>$ wizzy import orgs
+	- imports all orgs in JSON format and stores under orgs directory
 
-<ol>
-<li><p>Storing Grafana dashboards, rows, panels, datasources, orgs, template variables, etc. in Git.</p></li>
+$ wizzy import org ORG_ID
+	- imports an org with ORG_ID
 
-<li><p>Copy, move or edit rows and panels either within a dashboard or between two dashboards.</p></li>
+$ wizzy create org ORG_NAME
+	- creates an org in Grafana
 
-<li><p>Uploading and downloading Grafana dashboards from and to AWS S3 respectively.</p></li>
+$ wizzy show orgs
+	- shows all orgs from Grafana
 
-<li><p>Generating 8 second GIFs for any Grafana dashboard with last 24 hours of data.</p></li>
-</ol>
+$ wizzy show org ORG_ID
+	- shows an org from Grafana
+
+$ wizzy delete org ORG_ID
+	- deletes an org in Grafana
+
+$ wizzy export org ORG_ID
+	- exports an org from local JSON to replace the one in Grafana
+</code></pre>
 
 
       
@@ -421,8 +431,8 @@
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//home"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//home/getting-started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//remote-commands/datasource-commands"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//local-commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

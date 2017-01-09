@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>External-commands on wizzy - cli for Grafana</title>
+    <link>https://utkarshcmu.github.io/wizzy-site/external-commands/index.xml</link>
+    <description>Recent content in External-commands on wizzy - cli for Grafana</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://utkarshcmu.github.io/wizzy-site/external-commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>External Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/external-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/</guid>
+      <description>
+
+&lt;h1 id=&#34;external-commands&#34;&gt;External Commands&lt;/h1&gt;
+
+&lt;p&gt;These commands interacts with external platforms such as Grafana.net, S3, etc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AWS S3 Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/external-commands/s3-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/s3-commands/</guid>
+      <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Have your aws config file under ~/.aws/config (standard aws config location).&lt;/li&gt;
+&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And then you can use the following commands to upload and download your dashboards to and from S3.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy upload to-s3 dashboards
+  - uploads all dashboards to S3
+
+$ wizzy download from-s3 dashboards
+  - downloads all dashboards from S3 to local
+
+$ wizzy upload to-s3 dashboard DASHBOARD_SLUG
+  - uploads a single dashboard to S3
+
+$ wizzy download from-s3 dashboard DASHBOARD_SLUG
+  - downloads a single dashboard from S3
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grafana.net Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/external-commands/gnet-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/external-commands/gnet-commands/</guid>
+      <description>&lt;p&gt;wizzy can interact now with Grafana.net. It can list and download dashboards from Grafana.net. Commands available for interaction with Grafana.net are listed below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list gnet dashboards &amp;lt;FILTER&amp;gt;
+  - lists all the dashboards and if filter is present then filters out the dashboards according to it.
+  - for example: &#39;wizzy list gnet dashboards ds=graphite&#39; lists all dashboards with datasource = graphite.
+  
+$ wizzy download from-gnet dashboard DASHBOARD_ID REVISION_ID
+  - Download a dashboard json from Grafana.net and stores under dashboards directory.
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

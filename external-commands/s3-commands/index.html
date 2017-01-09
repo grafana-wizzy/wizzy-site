@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Use cases</title>
+    <title>AWS S3 Commands</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/home/use-cases/">
+  <body class="" data-url="/wizzy-site/external-commands/s3-commands/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -78,7 +78,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/wizzy-site/home/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/home/">
         <a href="/wizzy-site/home/">
           <span>
             
@@ -92,7 +92,7 @@
           
           
           
-            <li class="dd-item active" data-nav-id="/wizzy-site/home/use-cases/">
+            <li class="dd-item " data-nav-id="/wizzy-site/home/use-cases/">
               <a href="/wizzy-site/home/use-cases/">
                 <span>Use cases     </i></span>
               </a>
@@ -260,7 +260,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/external-commands/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/external-commands/">
         <a href="/wizzy-site/external-commands/">
           <span>
             
@@ -274,7 +274,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/external-commands/s3-commands/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/external-commands/s3-commands/">
               <a href="/wizzy-site/external-commands/s3-commands/">
                 <span>AWS S3 Commands     </i></span>
               </a>
@@ -375,13 +375,9 @@
                 
                 
                   
-                
-                  
-                
-                  
                     
                     
-                <a href="/wizzy-site/home/" itemprop="url"><span itemprop="title">Home</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/wizzy-site/external-commands/" itemprop="url"><span itemprop="title">External Commands</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
@@ -391,7 +387,11 @@
                 
                   
                 
-                <span itemprop="title"> Use cases</span>
+                  
+                
+                  
+                
+                <span itemprop="title"> AWS S3 Commands</span>
               </div>
               
 
@@ -399,20 +399,30 @@
             
     	        <div id="body-inner">
                 
-                <h1>Use cases</h1>
+                <h1>AWS S3 Commands</h1>
                 
 
-<p>If you would like to do the following in Grafana, then <code>wizzy</code> is a great command line tools which can accomplish the following tasks with ease:</p>
+<p>To use wizzy with AWS S3, there are couple of steps to follow.</p>
 
 <ol>
-<li><p>Storing Grafana dashboards, rows, panels, datasources, orgs, template variables, etc. in Git.</p></li>
-
-<li><p>Copy, move or edit rows and panels either within a dashboard or between two dashboards.</p></li>
-
-<li><p>Uploading and downloading Grafana dashboards from and to AWS S3 respectively.</p></li>
-
-<li><p>Generating 8 second GIFs for any Grafana dashboard with last 24 hours of data.</p></li>
+<li>Have your aws config file under ~/.aws/config (standard aws config location).</li>
+<li>Set Bucket name and path (optional) using <code>wizzy set s3 bucket_name</code> and <code>wizzy set s3 path</code> commands.</li>
 </ol>
+
+<p>And then you can use the following commands to upload and download your dashboards to and from S3.</p>
+
+<pre><code>$ wizzy upload to-s3 dashboards
+  - uploads all dashboards to S3
+
+$ wizzy download from-s3 dashboards
+  - downloads all dashboards from S3 to local
+
+$ wizzy upload to-s3 dashboard DASHBOARD_SLUG
+  - uploads a single dashboard to S3
+
+$ wizzy download from-s3 dashboard DASHBOARD_SLUG
+  - downloads a single dashboard from S3
+</code></pre>
 
 
       
@@ -421,8 +431,8 @@
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//home"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//home/getting-started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//external-commands"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//external-commands/gnet-commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

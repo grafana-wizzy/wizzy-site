@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Local-commands on wizzy - cli for Grafana</title>
+    <link>https://utkarshcmu.github.io/wizzy-site/local-commands/index.xml</link>
+    <description>Recent content in Local-commands on wizzy - cli for Grafana</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://utkarshcmu.github.io/wizzy-site/local-commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Local Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/</guid>
+      <description>
+
+&lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;
+
+&lt;p&gt;These commands operates on local json file based dashboards and support Dashboard Context.&lt;/p&gt;
+
+&lt;h3 id=&#34;dashboard-context&#34;&gt;Dashboard context&lt;/h3&gt;
+
+&lt;p&gt;A user can set the dashboard context in wizzy by the following command so that the wizzy cli is aware about the local dashboard on which it should operate. This is an optional setting for some commands and mandatory for other commands, which makes wizzy cli more intuitive and user-friendly.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set context dashboard DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: Once context is set, wizzy will use this dashboard as default if no dashboard is supplied. It will be mentioned in the documentation where setting dashboard context is required.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dashboard Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-commands/</guid>
+      <description>&lt;p&gt;These commands impacts the dashboard wide changes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy summarize dashboard DASHBOARD_SLUG
+	- prints summary of a local dashboard
+
+$ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE
+	- changes OLD_DATASOURCE to NEW_DATASOURCE for all panels on a dashboard
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Row Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;$ wizzy copy row SOURCE_ROW_NUMBER DESTINATION_ROW_NUMBER
+	- copies a row from one position to another on the same dashboard
+
+$ wizzy copy row SOURCE_ROW_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER
+	- copies a row from one dashboard to another dashboard
+
+$ wizzy move row SOURCE_ROW_NUMBER DESTINATION_ROW_NUMBER
+	- moves a row from one position to another on the same dashboard
+
+$ wizzy move row SOURCE_ROW_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER
+	- moves a row from one dashboard to another dashboard
+
+$ wizzy remove row SOURCE_ROW_NUMBER
+	- removes a row from the current dashboard
+
+$ wizzy extract row SOURCE_ROW_NUMBER
+  - removes a row from the current dashboard and saves it under rows directory
+
+$ wizzy insert row ROW_NAME
+  - inserts a row from the rows directory to context dashboard
+
+$ wizzy insert row ROW_NAME DESTINATION_SLUG
+	- inserts a row from the rows directory to a dashboard
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Panel Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/panel-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/panel-commands/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;$ wizzy copy panel SOURCE_ROW.PANEL_NUMBER DESTINATION_ROW_NUMBER.PANEL_NUMBER
+	- copies a panel from current row to another row on the same dashboard
+
+$ wizzy copy panel SOURCE_ROW.PANEL_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER
+	- copies a panel from current dashboard to another dashboard
+
+$ wizzy move panel SOURCE_ROW.PANEL_NUMBER DESTINATION_ROW_NUMBER.PANEL_NUMBER
+	- moves a panel from current row to another row on the same dashboard
+
+$ wizzy move panel SOURCE_ROW.PANEL_NUMBER DESTINATION_DASHBOARD_SLUG.ROW_NUMBER.PANEL_NUMBER
+	- moves a panel from current dashboard to another dashboard
+
+$ wizzy remove panel SOURCE_ROW.PANEL_NUMBER
+	- removes a panel from current dashboard
+
+$ wizzy extract panel SOURCE_ROW_NUMBER.PANEL_NUMBER PANEL_NAME
+  - removes a panel from the current dashboard and saves it under panels directory
+
+$ wizzy insert panel PANEL_NAME ROW_NUMBER
+  - inserts a panel from the panels directory to a row in context dashboard
+
+$ wizzy insert panel ROW_NAME DESTINATION_SLUG.ROW_NUMBER
+	- inserts a panel from the panels directory to a row in a dashboard
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Template Variable Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/temp-var-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/temp-var-commands/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;$ wizzy copy temp-var SOURCE_TEMP-VAR_NUMBER DESTINATION_DASHBOARD_SLUG.TEMP-VAR_NUMBER
+	- copies a template variable from current dashboard to another dashboard
+
+$ wizzy move temp-var SOURCE_TEMP-VAR_NUMBER DESTINATION_DASHBOARD_SLUG.TEMP-VAR_NUMBER
+	- moves a template variable from current dashboard to another dashboard
+
+$ wizzy remove temp-var SOURCE_TEMP-VAR_NUMBER
+	- removes a template variable from current dashboard
+
+$ wizzy extract temp-var SOURCE_TEMP-VAR_NUMBER TEMP_VAR_NAME
+	- copies a template variable from current dashboard to a json file under temp-vars directory for resuse
+
+$ wizzy insert temp-var TEMP_VAR_NAME DASHBOARD_SLUG
+	- copies a template variable from JSON file to the specified dashboard otherwise to the context dashboard, if not specified
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: wizzy removes &lt;code&gt;version&lt;/code&gt; field from the imported dashboard before saving it to the disk as version is something what Grafana takes care of for a dashboard. ROW_NUMBER and PANEL_NUMBER starts from 1.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Datasource Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/datasource-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/datasource-commands/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;$ wizzy summarize datasources
+	- prints summary of all local datasources
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Org Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/org-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/org-commands/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;$ wizzy summarize orgs
+	- prints summary of all local orgs
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
