@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Row Commands</title>
+    <title>Store Dashboards in Git</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/local-commands/row-commands/">
+  <body class="" data-url="/wizzy-site/examples/store-dashboards-in-git/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -186,7 +186,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/wizzy-site/local-commands/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/local-commands/">
         <a href="/wizzy-site/local-commands/">
           <span>
             
@@ -208,7 +208,7 @@
           
           
           
-            <li class="dd-item active" data-nav-id="/wizzy-site/local-commands/row-commands/">
+            <li class="dd-item " data-nav-id="/wizzy-site/local-commands/row-commands/">
               <a href="/wizzy-site/local-commands/row-commands/">
                 <span>Row Commands     </i></span>
               </a>
@@ -322,7 +322,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/examples/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/examples/">
         <a href="/wizzy-site/examples/">
           <span>
             
@@ -336,7 +336,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/examples/store-dashboards-in-git/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/examples/store-dashboards-in-git/">
               <a href="/wizzy-site/examples/store-dashboards-in-git/">
                 <span>Store Dashboards in Git     </i></span>
               </a>
@@ -383,23 +383,23 @@
                 
                 
                   
-                
-                  
-                
-                  
-                
-                  
-                
-                  
                     
                     
-                <a href="/wizzy-site/local-commands/" itemprop="url"><span itemprop="title">Local Commands</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/wizzy-site/examples/" itemprop="url"><span itemprop="title">Examples</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
                   
                 
-                <span itemprop="title"> Row Commands</span>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                <span itemprop="title"> Store Dashboards in Git</span>
               </div>
               
 
@@ -407,74 +407,32 @@
             
     	        <div id="body-inner">
                 
-                <h1>Row Commands</h1>
+                <h1>Store Dashboards in Git</h1>
                 
 
-<p>Following commands are used to operate on rows in json files stored locally under dashboards/rows directory. These commands need Dashboard Context. Please set Dashboard Context before using them.</p>
+<ol>
+<li><p>Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - <a href="/wizzy-site/home/getting-started">Installation</a></p></li>
 
-<ul>
-<li><p><strong>copy</strong> - Copies a row from one position to another. This command can be used to copy a row on the same dashboard and as well as to copy a row to other dashboards.</p>
+<li><p>Set Grafana properties if not set already:</p>
 
-<pre><code>$ wizzy copy row SOURCE DESTINATION
-</code></pre>
-
-<p><em><code>SOURCE</code></em> represents row number on the dashboard in context. Should be a <code>ROW_NUMBER</code>.
-<em><code>DESTINATION</code></em> can represent a row number on the same dashboard or on a different dashboard. Can be a <code>ROW_NUMBER</code> or <code>DASHBOARD_SLUG.ROW_NUMBER</code>.
-<em>For example, If you want to copy 2nd row as 4th row in the context dashboard, use:</em></p>
-
-<pre><code>$ wizzy copy row 2 4
-</code></pre>
-
-<p><em>For example, If you want to copy 2nd row from the context dashboard as 1st row in some other dashboard, use:</em></p>
-
-<pre><code>$ wizzy copy row 2 cpu-stats.1
+<pre><code>$ wizzy set grafana url http://localhost:3000
+$ wizzy set grafana username admin
+$ wizzy set grafana username password
 </code></pre></li>
 
-<li><p><strong>move</strong> - Moves a row from one position to another. This command can be used to move a row on the same dashboard and as well as to move a row to other dashboards.</p>
+<li><p>Import all Grafana dashboards:</p>
 
-<pre><code>$ wizzy move row SOURCE DESTINATION
-</code></pre>
-
-<p><em>For example:</em></p>
-
-<pre><code>$ wizzy move row 2 4
-$ wizzy move row 2 cpu-stats.1
+<pre><code>$ wizzy import dashboards
 </code></pre></li>
 
-<li><p><strong>remove</strong> - Removes a row from the context dashboard</p>
+<li><p>Check into Git the dashboards directory:</p>
 
-<pre><code>$ wizzy remove row ROW_NUMBER
-</code></pre>
-
-<p><em><code>ROW_NUMBER</code></em> represents row number on the dashboard in context.
-<em>For example, to delete 2nd row from your local json:</em></p>
-
-<pre><code>$ wizzy remove row 2
+<pre><code>$ git add dashboards
+$ git commit -m &quot;Initial dashboards commit&quot;
 </code></pre></li>
+</ol>
 
-<li><p><strong>extract</strong> - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use <code>insert</code> command to insert this row into any dashboard. Needs dashboard context to be set.</p>
-
-<pre><code>$ wizzy extract row ROW_NUMBER ROW_NAME
-</code></pre>
-
-<p><em>For example:</em></p>
-
-<pre><code>$ wizzy extract row 2 memory-stats-row
-</code></pre></li>
-
-<li><p><strong>insert</strong> - Inserts an extracted row from rows directory into a dashboard. If <code>DASHBOARD_SLUG</code> is not specified then this command will insert the row in context dashboard.</p>
-
-<pre><code>$ wizzy insert row ROW_NAME &lt;DESTINATION_SLUG&gt;
-</code></pre>
-
-<p><em>For example:</em></p>
-
-<pre><code>$ wizzy insert row memory-stats-row
-$ wizzy insert row memory-stats-row cassandra-stats
-</code></pre></li>
-</ul>
-
-<p>_Note: ROW<em>NUMBER starts from 1.</em></p>
+<p>You dashboards are stored in local Git repo. You may choose to push it to any remote branch now!</p>
 
 
       
@@ -483,8 +441,8 @@ $ wizzy insert row memory-stats-row cassandra-stats
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//local-commands/dashboard-commands"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//local-commands/panel-commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//examples"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//examples/store-dashboards-in-aws-s3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

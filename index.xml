@@ -143,6 +143,38 @@ $ wizzy set s3 path
     </item>
     
     <item>
+      <title>Store Dashboards in Git</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-git/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
+$ wizzy set grafana username admin
+$ wizzy set grafana username password
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Import all Grafana dashboards:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Check into Git the dashboards directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git add dashboards
+$ git commit -m &amp;quot;Initial dashboards commit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You dashboards are stored in local Git repo. You may choose to push it to any remote branch now!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Use cases</title>
       <link>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -507,6 +539,40 @@ Shows all orgs:&lt;/p&gt;
     </item>
     
     <item>
+      <title>Store Dashboards in AWS S3</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
+$ wizzy set grafana username admin
+$ wizzy set grafana username password
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Import all Grafana dashboards:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Have you aws config stored at its standard location ~/.aws/config&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set S3 Bucket name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set s3 bucket_name grafana-setup
+$ wizzy upload to-s3 dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You dashboards are stored have been uploaded to AWS S3 now!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Getting Started</title>
       <link>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -679,44 +745,6 @@ $ wizzy insert row memory-stats-row cassandra-stats
 &lt;/ul&gt;
 
 &lt;p&gt;_Note: ROW&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Store Dashboards in Github</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-github/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-github/</guid>
-      <description>
-
-&lt;p&gt;Learn how to store dashboards in Github&lt;/p&gt;
-
-&lt;h1 id=&#34;work-in-progress&#34;&gt;work in progress &amp;hellip;.&lt;/h1&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Concepts</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/concepts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/concepts/</guid>
-      <description>&lt;p&gt;There are basically 2 copies of your Grafana entities. One running in Grafana live currently and second stored in your local directory.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;local dashboard&lt;/em&gt; - a dashboard json file under dashboards directory on local disk&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;em&gt;remote dashboard&lt;/em&gt; - a dashboard currently live in Grafana&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;em&gt;local panel&lt;/em&gt; - a panel json file under temp-vars directory on local disk&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;em&gt;remote panel&lt;/em&gt; - a panel currently live one a dashboard in Grafana&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Commands are available to interact with both copies of your Grafana entities.&lt;/p&gt;
 </description>
     </item>
     
