@@ -50,14 +50,6 @@
   </url>
   
   <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</loc>
-  </url>
-  
-  <url>
-    <loc>https://utkarshcmu.github.io/wizzy-site/examples/clip-grafana-dashboards/</loc>
-  </url>
-  
-  <url>
     <loc>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</loc>
   </url>
   
@@ -66,7 +58,15 @@
   </url>
   
   <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</loc>
+  </url>
+  
+  <url>
     <loc>https://utkarshcmu.github.io/wizzy-site/home/concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://utkarshcmu.github.io/wizzy-site/examples/clip-grafana-dashboards/</loc>
   </url>
   
   <url>

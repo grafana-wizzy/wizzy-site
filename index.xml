@@ -529,7 +529,7 @@ Shows all orgs:&lt;/p&gt;
     </item>
     
     <item>
-      <title>Store Dashboard in Git</title>
+      <title>Store Dashboards in Git</title>
       <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -572,89 +572,6 @@ $ wizzy add to-dash-list my-first-list dashboard-6
 &lt;/ol&gt;
 
 &lt;p&gt;Check your clips directory now. You should see my-first-list.gif&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Store Dashboards in AWS S3</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
-$ wizzy set grafana username admin
-$ wizzy set grafana username password
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Import all Grafana dashboards:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Have you aws config stored at its standard location ~/.aws/config&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Set S3 Bucket name.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy set s3 bucket_name grafana-setup
-$ wizzy upload to-s3 dashboards
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;You dashboards are stored have been uploaded to AWS S3 now!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Generate GIF from Dashboards</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/clip-grafana-dashboards/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/clip-grafana-dashboards/</guid>
-      <description>&lt;p&gt;You can generate a gif image of your favorite Grafana dashbords now, using the following commands:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
-$ wizzy set grafana username admin
-$ wizzy set grafana username password
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Set Clip properties if not set already:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy set clip render_height 600
-$ wizzy set clip render_width 800
-$ wizzy set clip render_timeout 15
-$ wizzy set clip canvas_height 600
-$ wizzy set clip canvas_width 800
-$ wizzy set clip delay 2000
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Create a dashboard list:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy create dash-list my-first-list
-$ wizzy add to-dash-list my-first-list dashboard-1
-$ wizzy add to-dash-list my-first-list dashboard-2
-$ wizzy add to-dash-list my-first-list dashboard-3
-$ wizzy add to-dash-list my-first-list dashboard-4
-$ wizzy add to-dash-list my-first-list dashboard-5
-$ wizzy add to-dash-list my-first-list dashboard-6
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Use clip command to create the gif in clips directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy clip dash-list my-first-list
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Check your clips directory now. You should see my-first-list.gif.&lt;/p&gt;
 </description>
     </item>
     
@@ -757,6 +674,114 @@ $ wizzy set grafana password admin
 &lt;/ol&gt;
 
 &lt;p&gt;You are ready to use wizzy. Check out &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/examples&#34;&gt;examples&lt;/a&gt;!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Row Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</guid>
+      <description>&lt;p&gt;Following commands are used to operate on rows in json files stored locally under dashboards/rows directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;copy&lt;/strong&gt; - Copies a row from one position to another. This command can be used to copy a row on the same dashboard and as well as to copy a row to other dashboards.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy row SOURCE DESTINATION
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;SOURCE&lt;/code&gt;&lt;/em&gt; represents row number on the dashboard in context. Should be a &lt;code&gt;ROW_NUMBER&lt;/code&gt;.
+&lt;em&gt;&lt;code&gt;DESTINATION&lt;/code&gt;&lt;/em&gt; can represent a row number on the same dashboard or on a different dashboard. Can be a &lt;code&gt;ROW_NUMBER&lt;/code&gt; or &lt;code&gt;DASHBOARD_SLUG.ROW_NUMBER&lt;/code&gt;.
+&lt;em&gt;For example, If you want to copy 2nd row as 4th row in the context dashboard, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy row 2 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example, If you want to copy 2nd row from the context dashboard as 1st row in some other dashboard, use:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy copy row 2 cpu-stats.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;move&lt;/strong&gt; - Moves a row from one position to another. This command can be used to move a row on the same dashboard and as well as to move a row to other dashboards.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move row SOURCE DESTINATION
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy move row 2 4
+$ wizzy move row 2 cpu-stats.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;remove&lt;/strong&gt; - Removes a row from the context dashboard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove row ROW_NUMBER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;ROW_NUMBER&lt;/code&gt;&lt;/em&gt; represents row number on the dashboard in context.
+&lt;em&gt;For example, to delete 2nd row from your local json:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove row 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies row json object and saves it as a separate file under rows directory. This command is useful if you want to re-use this row in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert this row into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract row ROW_NUMBER ROW_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract row 2 memory-stats-row
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;insert&lt;/strong&gt; - Inserts an extracted row from rows directory into a dashboard. If &lt;code&gt;DASHBOARD_SLUG&lt;/code&gt; is not specified then this command will insert the row in context dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert row ROW_NAME &amp;lt;DESTINATION_SLUG&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert row memory-stats-row
+$ wizzy insert row memory-stats-row cassandra-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;_Note: ROW&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Store Dashboards in AWS S3</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
+$ wizzy set grafana username admin
+$ wizzy set grafana username password
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Import all Grafana dashboards:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Have you aws config stored at its standard location ~/.aws/config&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set S3 Bucket name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy set s3 bucket_name grafana-setup
+$ wizzy upload to-s3 dashboards
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You dashboards are stored have been uploaded to AWS S3 now!&lt;/p&gt;
 </description>
     </item>
     
