@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Getting Started</title>
+    <title>Generate GIF from Dashboards</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/home/getting-started/">
+  <body class="" data-url="/wizzy-site/examples/clip-grafana-dashboards/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -78,7 +78,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/wizzy-site/home/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/home/">
         <a href="/wizzy-site/home/">
           <span>
             
@@ -100,7 +100,7 @@
           
           
           
-            <li class="dd-item active" data-nav-id="/wizzy-site/home/getting-started/">
+            <li class="dd-item " data-nav-id="/wizzy-site/home/getting-started/">
               <a href="/wizzy-site/home/getting-started/">
                 <span>Getting Started     </i></span>
               </a>
@@ -338,7 +338,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/examples/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/examples/">
         <a href="/wizzy-site/examples/">
           <span>
             
@@ -368,7 +368,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/examples/clip-grafana-dashboards/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/examples/clip-grafana-dashboards/">
               <a href="/wizzy-site/examples/clip-grafana-dashboards/">
                 <span>Generate GIF from Dashboards     </i></span>
               </a>
@@ -407,15 +407,9 @@
                 
                 
                   
-                
-                  
-                
-                  
-                
-                  
                     
                     
-                <a href="/wizzy-site/home/" itemprop="url"><span itemprop="title">Home</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/wizzy-site/examples/" itemprop="url"><span itemprop="title">Examples</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
@@ -423,7 +417,13 @@
                 
                   
                 
-                <span itemprop="title"> Getting Started</span>
+                  
+                
+                  
+                
+                  
+                
+                <span itemprop="title"> Generate GIF from Dashboards</span>
               </div>
               
 
@@ -431,102 +431,49 @@
             
     	        <div id="body-inner">
                 
-                <h1>Getting Started</h1>
+                <h1>Generate GIF from Dashboards</h1>
                 
 
-
-
-<h2 id="prerequisites">Prerequisites</h2>
-
-<p>Install nodejs by downloading it from nodejs.org. (<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>). After installing nodejs, run following commands:</p>
-
-<pre><code>$ node -v
-$ npm -v
-</code></pre>
-
-<p><em>Note: Please make sure node version is above 5.10.1.</em></p>
-
-<h2 id="installation">Installation</h2>
-
-<p>There are 3 different ways you can install wizzy:</p>
+<p>You can generate a gif image of your favorite Grafana dashbords now, using the following commands:</p>
 
 <ol>
-<li><p>Using docker. Pull the latest docker image <a href="https://github.com/utkarshcmu/wizzy-docker">wizzy-docker</a></p>
+<li><p>Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - <a href="/wizzy-site/home/getting-started">Installation</a></p></li>
 
-<pre><code>$ docker pull utkarshcmu/wizzy
-</code></pre></li>
-
-<li><p>Using npm (Stable release):</p>
-
-<pre><code>$ npm install -g wizzy
-</code></pre>
-
-<p><em>Node: - Use sudo if needed or permission was denied</em></p></li>
-
-<li><p>Using Github (from source):</p>
-
-<pre><code>$ git clone https://github.com/utkarshcmu/wizzy.git
-$ cd wizzy
-$ npm install
-$ npm link
-</code></pre></li>
-</ol>
-
-<h2 id="initialization">Initialization</h2>
-
-<p>Once <code>wizzy</code> is installed, it needs to be initialized to serve you with the awesome commands it has. These are the most important steps to setup wizzy.</p>
-
-<ol>
-<li><p>Check wizzy version</p>
-
-<pre><code>$ wizzy version
-</code></pre></li>
-
-<li><p>Create a local directory for storing Grafana entities.</p>
-
-<pre><code>$ mkdir DIRECTORY_NAME
-$ cd DIRECTORY_NAME
-</code></pre>
-
-<p><em>For example:</em></p>
-
-<pre><code>$ mkdir grafana-entities
-$ cd grafana-entities
-</code></pre></li>
-
-<li><p>Best practice - Initialize git repo in your grafana-entities directory. Its an optional step and should be used if you need version control for your Grafana entities such as dashboards, datasources, etc.</p>
-
-<pre><code>$ git init
-</code></pre></li>
-
-<li><p>Initialize wizzy</p>
-
-<pre><code>$ wizzy init
-</code></pre></li>
-
-<li><p>Connect to Grafana by setting Grafana properties in wizzy&rsquo;s config. Please set your Grafana username and password if anonymous access to Grafana is disabled.</p>
-
-<pre><code>$ wizzy set grafana url GRAFANA_URL
-$ wizzy set grafana username YOUR_USERNAME
-$ wizzy set grafana password YOUR_PASSWORD
-</code></pre>
-
-<p><em>For example:</em></p>
+<li><p>Set Grafana properties if not set already:</p>
 
 <pre><code>$ wizzy set grafana url http://localhost:3000
 $ wizzy set grafana username admin
-$ wizzy set grafana password admin
-</code></pre>
+$ wizzy set grafana username password
+</code></pre></li>
 
-<p><em>Note: Add <code>conf</code> directory to .gitignore to avoid checking in your credentials into git repo.</em></p></li>
+<li><p>Set Clip properties if not set already:</p>
 
-<li><p>Test wizzy setup</p>
+<pre><code>$ wizzy set clip render_height 600
+$ wizzy set clip render_width 800
+$ wizzy set clip render_timeout 15
+$ wizzy set clip canvas_height 600
+$ wizzy set clip canvas_width 800
+$ wizzy set clip delay 2000
+</code></pre></li>
 
-<pre><code>$ wizzy status
+<li><p>Create a dashboard list:</p>
+
+<pre><code>$ wizzy create dash-list my-first-list
+$ wizzy add to-dash-list my-first-list dashboard-1
+$ wizzy add to-dash-list my-first-list dashboard-2
+$ wizzy add to-dash-list my-first-list dashboard-3
+$ wizzy add to-dash-list my-first-list dashboard-4
+$ wizzy add to-dash-list my-first-list dashboard-5
+$ wizzy add to-dash-list my-first-list dashboard-6
+</code></pre></li>
+
+<li><p>Use clip command to create the gif in clips directory:</p>
+
+<pre><code>$ wizzy clip dash-list my-first-list
 </code></pre></li>
 </ol>
 
-<p>You are ready to use wizzy. Check out <a href="/wizzy-site/examples">examples</a>!</p>
+<p>Check your clips directory now. You should see my-first-list.gif.</p>
 
 
       
@@ -535,8 +482,8 @@ $ wizzy set grafana password admin
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//home/use-cases"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//home/concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//examples/store-dashboards-in-aws-s3"> <i class="fa fa-chevron-left"></i></a>
+        
     </div>
 
     </section>

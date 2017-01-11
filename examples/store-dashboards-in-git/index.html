@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Store Dashboards in Git</title>
+    <title>Store Dashboard in Git</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -354,7 +354,7 @@
           
             <li class="dd-item active" data-nav-id="/wizzy-site/examples/store-dashboards-in-git/">
               <a href="/wizzy-site/examples/store-dashboards-in-git/">
-                <span>Store Dashboards in Git     </i></span>
+                <span>Store Dashboard in Git     </i></span>
               </a>
             </li>
           
@@ -363,6 +363,14 @@
             <li class="dd-item " data-nav-id="/wizzy-site/examples/store-dashboards-in-aws-s3/">
               <a href="/wizzy-site/examples/store-dashboards-in-aws-s3/">
                 <span>Store Dashboards in AWS S3     </i></span>
+              </a>
+            </li>
+          
+          
+          
+            <li class="dd-item " data-nav-id="/wizzy-site/examples/clip-grafana-dashboards/">
+              <a href="/wizzy-site/examples/clip-grafana-dashboards/">
+                <span>Generate GIF from Dashboards     </i></span>
               </a>
             </li>
           
@@ -415,7 +423,7 @@
                 
                   
                 
-                <span itemprop="title"> Store Dashboards in Git</span>
+                <span itemprop="title"> Store Dashboard in Git</span>
               </div>
               
 
@@ -423,7 +431,7 @@
             
     	        <div id="body-inner">
                 
-                <h1>Store Dashboards in Git</h1>
+                <h1>Store Dashboard in Git</h1>
                 
 
 <ol>
@@ -436,19 +444,34 @@ $ wizzy set grafana username admin
 $ wizzy set grafana username password
 </code></pre></li>
 
-<li><p>Import all Grafana dashboards:</p>
+<li><p>Set Clip properties if not set already:</p>
 
-<pre><code>$ wizzy import dashboards
+<pre><code>$ wizzy set clip render_height 600
+$ wizzy set clip render_width 800
+$ wizzy set clip render_timeout 15
+$ wizzy set clip canvas_height 600
+$ wizzy set clip canvas_width 800
+$ wizzy set clip delay 2000
 </code></pre></li>
 
-<li><p>Check into Git the dashboards directory:</p>
+<li><p>Create a dashboard list:</p>
 
-<pre><code>$ git add dashboards
-$ git commit -m &quot;Initial dashboards commit&quot;
+<pre><code>$ wizzy create dash-list my-first-list
+$ wizzy add to-dash-list my-first-list dashboard-1
+$ wizzy add to-dash-list my-first-list dashboard-2
+$ wizzy add to-dash-list my-first-list dashboard-3
+$ wizzy add to-dash-list my-first-list dashboard-4
+$ wizzy add to-dash-list my-first-list dashboard-5
+$ wizzy add to-dash-list my-first-list dashboard-6
+</code></pre></li>
+
+<li><p>Use clip command to create the gif in clips directory:</p>
+
+<pre><code>$ wizzy clip dash-list my-first-list
 </code></pre></li>
 </ol>
 
-<p>You dashboards are stored in local Git repo. You may choose to push it to any remote branch now!</p>
+<p>Check your clips directory now. You should see my-first-list.gif</p>
 
 
       
@@ -457,8 +480,8 @@ $ git commit -m &quot;Initial dashboards commit&quot;
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//examples"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//examples/store-dashboards-in-aws-s3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//examples/store-dashboards-in-aws-s3"> <i class="fa fa-chevron-left"></i></a>
+        
     </div>
 
     </section>
