@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>General Commands</title>
+    <title>Dashboard List Commands</title>
     <link href="https://utkarshcmu.github.io/wizzy-site//css/nucleus.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://utkarshcmu.github.io/wizzy-site//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     
 
   </head>
-  <body class="" data-url="/wizzy-site/general-commands/">
+  <body class="" data-url="/wizzy-site/local-commands/dash-list-commands/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -186,7 +186,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/wizzy-site/local-commands/">
+      <li class="dd-item  parent" data-nav-id="/wizzy-site/local-commands/">
         <a href="/wizzy-site/local-commands/">
           <span>
             
@@ -232,7 +232,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/wizzy-site/local-commands/dash-list-commands/">
+            <li class="dd-item active" data-nav-id="/wizzy-site/local-commands/dash-list-commands/">
               <a href="/wizzy-site/local-commands/dash-list-commands/">
                 <span>Dashboard List Commands     </i></span>
               </a>
@@ -318,7 +318,7 @@
       
       
 
-      <li class="dd-item active parent" data-nav-id="/wizzy-site/general-commands/">
+      <li class="dd-item  " data-nav-id="/wizzy-site/general-commands/">
         <a href="/wizzy-site/general-commands/">
           <span>
             
@@ -403,106 +403,72 @@
                   
                 
                   
+                
+                  
+                
+                  
                     
                     
+                <a href="/wizzy-site/local-commands/" itemprop="url"><span itemprop="title">Local Commands</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
                   
                 
-                  
-                
-                  
-                
-                <span itemprop="title"> General Commands</span>
+                <span itemprop="title"> Dashboard List Commands</span>
               </div>
               
 
             </div>
             
-              <div id="chapter">
-            
     	        <div id="body-inner">
                 
+                <h1>Dashboard List Commands</h1>
+                
 
-
-
-<h1 id="help-commands">Help Commands</h1>
-
-<p>Help commands lets you explore wizzy&rsquo;s info, health, configuration.</p>
+<p>Following commands are used to manage custom dashboard lists. These lists are persisted so that a user does not have to create these lists again and they can be re-used for various commands such as clip, etc.</p>
 
 <ul>
-<li><p><strong>conf</strong> - Shows wizzy configuration</p>
+<li><p><strong>create</strong> - Creates a dashboard list.</p>
 
-<pre><code>$ wizzy conf
+<pre><code>$ wizzy create dash-list DASH_LIST_NAME
 </code></pre></li>
 
-<li><p><strong>init</strong> - Only to be used while setting up wizzy for the first time or upgrading wizzy. It creates all the required directories needed for wizzy.</p>
+<li><p><strong>add</strong> - Adds a dashboard to an existing list.</p>
 
-<pre><code>$ wizzy init
+<pre><code>$ wizzy add to-dash-list DASH_LIST_NAME DASHBOARD_SLUG
 </code></pre></li>
 
-<li><p><strong>status</strong> - Shows wizzy status.</p>
+<li><p><strong>remove</strong> - Removes a dashbaord from an existing list.</p>
 
-<pre><code>$ wizzy status
+<pre><code>$ wizzy remove from-dash-list DASH_LIST_NAME DASHBOARD_SLUG
 </code></pre></li>
 
-<li><p><strong>help</strong> - Shows wizzy help.</p>
+<li><p><strong>show</strong> - Shows a dashboard list&rsquo;s details.</p>
 
-<pre><code>$ wizzy help
+<pre><code>$ wizzy show dash-list DASH_LIST_NAME
 </code></pre></li>
 
-<li><p><strong>version</strong> - Shows wizzy version.</p>
+<li><p><strong>clear</strong> - Clears a dashboard list(remove all dashboards from it).</p>
 
-<pre><code>$ wizzy version
+<pre><code>$ wizzy clear dash-list DASH_LIST_NAME
+</code></pre></li>
+
+<li><p><strong>delete</strong> - Deletes a dashboard list.</p>
+
+<pre><code>$ wizzy delete dash-list DASH_LIST_NAME
 </code></pre></li>
 </ul>
 
-<h1 id="configuration-commands">Configuration commands</h1>
 
-<p>wizzy properties can be set in wizzy by running following commands, if you have not set already:</p>
-
-<h3 id="set-grafana-properties">Set Grafana properties:</h3>
-
-<pre><code>$ wizzy set grafana url GRAFANA_URL
-$ wizzy set grafana username USERNAME
-$ wizzy set grafana password PASSWORD
-$ wizzy set grafana debug_api true
-</code></pre>
-
-<p><em>Note: There is an optional setting to debug Grafana API calls, <code>false</code> by default.</em></p>
-
-<h3 id="set-dashboard-context">Set Dashboard context:</h3>
-
-<pre><code>$ wizzy set context dashboard DASHBOARD_SLUG
-</code></pre>
-
-<h3 id="set-clip-command-properties">Set Clip command properties:</h3>
-
-<pre><code>$ wizzy set clip render_height 600
-$ wizzy set clip render_width 600
-$ wizzy set clip render_timeout 10
-$ wizzy set clip canvas_width 800
-$ wizzy set clip canvas_height 600
-$ wizzy set clip delay 500
-</code></pre>
-
-<h3 id="set-s3-properties">Set S3 properties:</h3>
-
-<pre><code>$ wizzy set s3 bucket_name
-$ wizzy set s3 path
-</code></pre>
-
-
-      
-        </div> 
       
       </div>
     </div>
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//external-commands/gnet-commands"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//examples" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="https://utkarshcmu.github.io/wizzy-site//local-commands/org-commands"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="https://utkarshcmu.github.io/wizzy-site//external-commands" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

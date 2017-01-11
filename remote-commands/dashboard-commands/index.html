@@ -232,6 +232,22 @@
           
           
           
+            <li class="dd-item " data-nav-id="/wizzy-site/local-commands/dash-list-commands/">
+              <a href="/wizzy-site/local-commands/dash-list-commands/">
+                <span>Dashboard List Commands     </i></span>
+              </a>
+            </li>
+          
+          
+          
+            <li class="dd-item " data-nav-id="/wizzy-site/local-commands/dashboard-tags-commands/">
+              <a href="/wizzy-site/local-commands/dashboard-tags-commands/">
+                <span>Dashboard Tags Commands     </i></span>
+              </a>
+            </li>
+          
+          
+          
             <li class="dd-item " data-nav-id="/wizzy-site/local-commands/datasource-commands/">
               <a href="/wizzy-site/local-commands/datasource-commands/">
                 <span>Datasource Commands     </i></span>
@@ -413,9 +429,10 @@
 <p>Following commands are used to interact with Grafana dashboards.</p>
 
 <ul>
-<li><p><strong>list</strong> - Prints the list of dashboards from Grafana in a tabular format</p>
+<li><p><strong>list</strong> - Prints the list of dashboards/dashboard-tags from Grafana in a tabular format</p>
 
 <pre><code>$ wizzy list dashboards
+$ wizzy list dashboard-tags
 </code></pre></li>
 
 <li><p><strong>show</strong> - Prints remote dashboard json from Grafana</p>
@@ -472,7 +489,8 @@ For exporting all local dashboards to Grafana, use the following command:</p>
 <pre><code>$ wizzy delete dashboard cpu-stats
 </code></pre></li>
 
-<li><p><strong>clip</strong> - Makes a clip (a gif image) of dashboard&rsquo;s last 24 hours of data. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at <a href="/wizzy-site/general-commands/">General commands</a>. Generated clip will be under clips directory.</p>
+<li><p><strong>clip</strong> - Generate a gif image for Grafana dashboards. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at <a href="/wizzy-site/general-commands/">General commands</a>. Generated clip will be under clips directory.
+Makes a clip of a dashboard&rsquo;s last 24 hours of data:</p>
 
 <pre><code>$ wizzy clip dashboard DASHBOARD_SLUG
 </code></pre>
@@ -480,6 +498,26 @@ For exporting all local dashboards to Grafana, use the following command:</p>
 <p><em>For example:</em></p>
 
 <pre><code>$ wizzy clip dashboard cpu-stats
+</code></pre>
+
+<p>Makes a clip of dashboards having a specific dashboard tag:</p>
+
+<pre><code>$ wizzy clip dashboards-by-tag DASHBOARD_TAG_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy clip dashboards-by-tag graphite
+</code></pre>
+
+<p>Makes a clip of dashboards from a custom dashboard list:</p>
+
+<pre><code>$ wizzy clip dash-list DASH_LIST_NAME
+</code></pre>
+
+<p><em>For example:</em></p>
+
+<pre><code>$ wizzy clip dash-list cassandra-dashbaords
 </code></pre>
 
 <p><em>Note:</em> Please delete the <code>temp</code> directory created locally as it contains intermediate images to create the clip.</p></li>

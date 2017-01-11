@@ -33,9 +33,10 @@
       <description>&lt;p&gt;Following commands are used to interact with Grafana dashboards.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Prints the list of dashboards from Grafana in a tabular format&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Prints the list of dashboards/dashboard-tags from Grafana in a tabular format&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
+$ wizzy list dashboard-tags
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Prints remote dashboard json from Grafana&lt;/p&gt;
@@ -92,7 +93,8 @@ For exporting all local dashboards to Grafana, use the following command:&lt;/p&
 &lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard cpu-stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Makes a clip (a gif image) of dashboard&amp;rsquo;s last 24 hours of data. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Generate a gif image for Grafana dashboards. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.
+Makes a clip of a dashboard&amp;rsquo;s last 24 hours of data:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard DASHBOARD_SLUG
 &lt;/code&gt;&lt;/pre&gt;
@@ -100,6 +102,26 @@ For exporting all local dashboards to Grafana, use the following command:&lt;/p&
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Makes a clip of dashboards having a specific dashboard tag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dashboards-by-tag DASHBOARD_TAG_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dashboards-by-tag graphite
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Makes a clip of dashboards from a custom dashboard list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dash-list DASH_LIST_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clip dash-list cassandra-dashbaords
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; Please delete the &lt;code&gt;temp&lt;/code&gt; directory created locally as it contains intermediate images to create the clip.&lt;/p&gt;&lt;/li&gt;

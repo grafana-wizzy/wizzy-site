@@ -274,7 +274,7 @@ $ wizzy insert panel connections-panel cassandra-stats.3
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;insert&lt;/strong&gt; - Inserts an extracted template variable from temp-vars directory into a dashboard.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy insert temp-vae var-application &amp;lt;DASHBOARD_SLUG&amp;gt;
+&lt;pre&gt;&lt;code&gt;$ wizzy insert temp-var var-application &amp;lt;DASHBOARD_SLUG&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
@@ -285,6 +285,89 @@ $ wizzy insert temp-var var-application cassandra-stats
 &lt;/ul&gt;
 
 &lt;p&gt;_Note: TEMP-VAR&lt;em&gt;NUMBER starts from 1.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dashboard List Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/dash-list-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dash-list-commands/</guid>
+      <description>&lt;p&gt;Following commands are used to manage custom dashboard lists. These lists are persisted so that a user does not have to create these lists again and they can be re-used for various commands such as clip, etc.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;create&lt;/strong&gt; - Creates a dashboard list.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy create dash-list DASH_LIST_NAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;add&lt;/strong&gt; - Adds a dashboard to an existing list.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy add to-dash-list DASH_LIST_NAME DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;remove&lt;/strong&gt; - Removes a dashbaord from an existing list.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy remove from-dash-list DASH_LIST_NAME DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Shows a dashboard list&amp;rsquo;s details.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy show dash-list DASH_LIST_NAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;clear&lt;/strong&gt; - Clears a dashboard list(remove all dashboards from it).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy clear dash-list DASH_LIST_NAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;delete&lt;/strong&gt; - Deletes a dashboard list.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy delete dash-list DASH_LIST_NAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dashboard Tags Commands</title>
+      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-tags-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-tags-commands/</guid>
+      <description>&lt;p&gt;Following commands are used to operate on dashboard tags in json files stored locally under dashboards/temp-vars directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;copy&lt;/strong&gt; - Copies dashboard tags from context dashboard to another dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wizzy copy dash-tags DASHBOARD_SLUG
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;wizzy copy dash-tags another-dashboard
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; - Copies tags json object from context dashboard and saves it as a separate file under dash-tags directory. This command is useful if you want to re-use this dashboard tags in many dashboards. Later you can use &lt;code&gt;insert&lt;/code&gt; command to insert these dashboard tags into any dashboard. Needs dashboard context to be set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract dash-tags DASHBOARD_TAGS_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy extract dash-tags my-tags
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;insert&lt;/strong&gt; - Inserts dashboard tags from dash-tags directory into a dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert dash-tags DASHBOARD_TAGS_NAME &amp;lt;DASHBOARD_SLUG&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy insert dash-tags my-tags
+$ wizzy insert dash-tags my-tags cassandra-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
