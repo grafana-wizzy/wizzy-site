@@ -544,34 +544,19 @@ $ wizzy set grafana username admin
 $ wizzy set grafana username password
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Set Clip properties if not set already:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Import all dashboards from Grafana to your local directory&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy set clip render_height 600
-$ wizzy set clip render_width 800
-$ wizzy set clip render_timeout 15
-$ wizzy set clip canvas_height 600
-$ wizzy set clip canvas_width 800
-$ wizzy set clip delay 2000
+&lt;pre&gt;&lt;code&gt;$ wizzy import dashboards
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Create a dashboard list:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Check into Git the dashboards directory&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy create dash-list my-first-list
-$ wizzy add to-dash-list my-first-list dashboard-1
-$ wizzy add to-dash-list my-first-list dashboard-2
-$ wizzy add to-dash-list my-first-list dashboard-3
-$ wizzy add to-dash-list my-first-list dashboard-4
-$ wizzy add to-dash-list my-first-list dashboard-5
-$ wizzy add to-dash-list my-first-list dashboard-6
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Use clip command to create the gif in clips directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wizzy clip dash-list my-first-list
+&lt;pre&gt;&lt;code&gt;$ git add dashboards
+$ git commit -m &amp;quot;Initial dashboards commit&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Check your clips directory now. You should see my-first-list.gif&lt;/p&gt;
+&lt;p&gt;Your dashboards are stored in local Git repo. You may now choose to push it to any remote branch!&lt;/p&gt;
 </description>
     </item>
     
