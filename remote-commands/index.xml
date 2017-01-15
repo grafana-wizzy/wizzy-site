@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Prints the list of dashboards/dashboard-tags from Grafana in a tabular format&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy list dashboards
-$ wizzy list dashboard-tags
+$ wizzy list dash-tags
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; - Prints remote dashboard json from Grafana&lt;/p&gt;
