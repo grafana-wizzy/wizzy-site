@@ -379,7 +379,7 @@ To see all datasources, use the following command:&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ wizzy import datasource my-graphite
+&lt;pre&gt;&lt;code&gt;$ wizzy show datasource my-graphite
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;import&lt;/strong&gt; - Imports datasources in JSON format and store under datasources directory
