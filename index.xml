@@ -30,7 +30,7 @@
       <guid>https://utkarshcmu.github.io/wizzy-site/general-commands/</guid>
       <description>
 
-&lt;h1 id=&#34;help-commands&#34;&gt;Help Commands&lt;/h1&gt;
+&lt;h3 id=&#34;help-commands&#34;&gt;Help Commands&lt;/h3&gt;
 
 &lt;p&gt;Help commands lets you explore wizzy&amp;rsquo;s info, health, configuration.&lt;/p&gt;
 
@@ -61,26 +61,33 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;configuration-commands&#34;&gt;Configuration commands&lt;/h1&gt;
+&lt;h3 id=&#34;configuration-commands&#34;&gt;Configuration commands&lt;/h3&gt;
 
 &lt;p&gt;wizzy properties can be set in wizzy by running following commands, if you have not set already:&lt;/p&gt;
 
-&lt;h3 id=&#34;set-grafana-properties&#34;&gt;Set Grafana properties:&lt;/h3&gt;
+&lt;h3 id=&#34;grafana-properties&#34;&gt;Grafana properties:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set grafana url GRAFANA_URL
 $ wizzy set grafana username USERNAME
 $ wizzy set grafana password PASSWORD
+$ wizzy set grafana headers HEADER_NAME HEADER_VALUE
+$ wizzy set grafana authorization false
 $ wizzy set grafana debug_api true
+$ wizzy set grafana envs ENV_NAME url GRAFANA_URL&#39;
+$ wizzy unset grafana username&#39;
+$ wizzy unset grafana envs ENV_NAME url&#39;
+	
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Note: There is an optional setting to debug Grafana API calls, &lt;code&gt;false&lt;/code&gt; by default.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;set-dashboard-context&#34;&gt;Set Dashboard context:&lt;/h3&gt;
+&lt;h3 id=&#34;dashboard-context&#34;&gt;Dashboard context:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set context dashboard DASHBOARD_SLUG
+$ wizzy set context grafana GRAFANA_INSTALLATION
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;set-clip-command-properties&#34;&gt;Set Clip command properties:&lt;/h3&gt;
+&lt;h3 id=&#34;clip-command-properties&#34;&gt;Clip command properties:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set clip render_height 600
 $ wizzy set clip render_width 600
@@ -90,7 +97,7 @@ $ wizzy set clip canvas_height 600
 $ wizzy set clip delay 500
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;set-s3-properties&#34;&gt;Set S3 properties:&lt;/h3&gt;
+&lt;h3 id=&#34;s3-properties&#34;&gt;S3 properties:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set s3 bucket_name
 $ wizzy set s3 path
@@ -237,6 +244,16 @@ For downloading all dashboards:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy summarize dashboard
 $ wizzy summarize dashboard cpu-stats
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Lists panels on a dashboard with a particular datasource. This commands needs dashboard context as it will operate on the dashboard which is set in the context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list panels datasource DATASOURCE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy change panels datasource old-graphite new-graphite
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;change&lt;/strong&gt; - Changes a datasource name in all the panels on a dashboard. This commands needs dashboard context as it will operate on the dashboard which is set in the context.&lt;/p&gt;

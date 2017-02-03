@@ -56,6 +56,16 @@
 $ wizzy summarize dashboard cpu-stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; - Lists panels on a dashboard with a particular datasource. This commands needs dashboard context as it will operate on the dashboard which is set in the context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy list panels datasource DATASOURCE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wizzy change panels datasource old-graphite new-graphite
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;change&lt;/strong&gt; - Changes a datasource name in all the panels on a dashboard. This commands needs dashboard context as it will operate on the dashboard which is set in the context.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy change panels datasource OLD_DATASOURCE NEW_DATASOURCE

@@ -434,7 +434,7 @@
 
 
 
-<h1 id="help-commands">Help Commands</h1>
+<h3 id="help-commands">Help Commands</h3>
 
 <p>Help commands lets you explore wizzy&rsquo;s info, health, configuration.</p>
 
@@ -465,26 +465,33 @@
 </code></pre></li>
 </ul>
 
-<h1 id="configuration-commands">Configuration commands</h1>
+<h3 id="configuration-commands">Configuration commands</h3>
 
 <p>wizzy properties can be set in wizzy by running following commands, if you have not set already:</p>
 
-<h3 id="set-grafana-properties">Set Grafana properties:</h3>
+<h3 id="grafana-properties">Grafana properties:</h3>
 
 <pre><code>$ wizzy set grafana url GRAFANA_URL
 $ wizzy set grafana username USERNAME
 $ wizzy set grafana password PASSWORD
+$ wizzy set grafana headers HEADER_NAME HEADER_VALUE
+$ wizzy set grafana authorization false
 $ wizzy set grafana debug_api true
+$ wizzy set grafana envs ENV_NAME url GRAFANA_URL'
+$ wizzy unset grafana username'
+$ wizzy unset grafana envs ENV_NAME url'
+	
 </code></pre>
 
 <p><em>Note: There is an optional setting to debug Grafana API calls, <code>false</code> by default.</em></p>
 
-<h3 id="set-dashboard-context">Set Dashboard context:</h3>
+<h3 id="dashboard-context">Dashboard context:</h3>
 
 <pre><code>$ wizzy set context dashboard DASHBOARD_SLUG
+$ wizzy set context grafana GRAFANA_INSTALLATION
 </code></pre>
 
-<h3 id="set-clip-command-properties">Set Clip command properties:</h3>
+<h3 id="clip-command-properties">Clip command properties:</h3>
 
 <pre><code>$ wizzy set clip render_height 600
 $ wizzy set clip render_width 600
@@ -494,7 +501,7 @@ $ wizzy set clip canvas_height 600
 $ wizzy set clip delay 500
 </code></pre>
 
-<h3 id="set-s3-properties">Set S3 properties:</h3>
+<h3 id="s3-properties">S3 properties:</h3>
 
 <pre><code>$ wizzy set s3 bucket_name
 $ wizzy set s3 path
