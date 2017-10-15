@@ -35,7 +35,7 @@
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
 $ wizzy set grafana username admin
-$ wizzy set grafana username password
+$ wizzy set grafana password password
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Import all dashboards from Grafana to your local directory&lt;/p&gt;
@@ -67,7 +67,7 @@ $ git commit -m &amp;quot;Initial dashboards commit&amp;quot;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
 $ wizzy set grafana username admin
-$ wizzy set grafana username password
+$ wizzy set grafana password password
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Import all Grafana dashboards:&lt;/p&gt;
@@ -103,7 +103,7 @@ $ wizzy upload to-s3 dashboards
 
 &lt;pre&gt;&lt;code&gt;$ wizzy set grafana url http://localhost:3000
 $ wizzy set grafana username admin
-$ wizzy set grafana username password
+$ wizzy set grafana password password
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Set Clip properties if not set already:&lt;/p&gt;
