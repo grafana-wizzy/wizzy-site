@@ -612,7 +612,7 @@ $ npm -v
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Using docker. Pull the latest docker image &lt;a href=&#34;https://github.com/utkarshcmu/wizzy-docker&#34;&gt;wizzy-docker&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ docker pull utkarshcmu/wizzy
+&lt;pre&gt;&lt;code&gt;$ docker run --rm -it utkarshcmu/wizzy wizzy version
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Using npm (Stable release):&lt;/p&gt;
