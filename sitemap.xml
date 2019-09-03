@@ -2,141 +2,141 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/external-commands/</loc>
+    <loc>https://grafana-wizzy.com/external-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/general-commands/</loc>
+    <loc>https://grafana-wizzy.com/general-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/remote-commands/</loc>
+    <loc>https://grafana-wizzy.com/remote-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/home/use-cases/</loc>
+    <loc>https://grafana-wizzy.com/home/use-cases/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/external-commands/s3-commands/</loc>
+    <loc>https://grafana-wizzy.com/external-commands/s3-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/dashboard-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/remote-commands/dashboard-commands/</loc>
+    <loc>https://grafana-wizzy.com/remote-commands/dashboard-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/remote-commands/datasource-commands/</loc>
+    <loc>https://grafana-wizzy.com/remote-commands/datasource-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/external-commands/gnet-commands/</loc>
+    <loc>https://grafana-wizzy.com/external-commands/gnet-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/remote-commands/org-commands/</loc>
+    <loc>https://grafana-wizzy.com/remote-commands/org-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-git/</loc>
+    <loc>https://grafana-wizzy.com/examples/store-dashboards-in-git/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/home/getting-started/</loc>
+    <loc>https://grafana-wizzy.com/home/getting-started/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/row-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/row-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</loc>
+    <loc>https://grafana-wizzy.com/examples/store-dashboards-in-aws-s3/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/home/concepts/</loc>
+    <loc>https://grafana-wizzy.com/home/concepts/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/examples/clip-grafana-dashboards/</loc>
+    <loc>https://grafana-wizzy.com/examples/clip-grafana-dashboards/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/panel-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/panel-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/temp-var-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/temp-var-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/home/commands/</loc>
+    <loc>https://grafana-wizzy.com/home/commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/dash-list-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/dash-list-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-tags-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/dashboard-tags-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/datasource-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/datasource-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/org-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/org-commands/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/examples/</loc>
+    <loc>https://grafana-wizzy.com/examples/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/examples/</loc>
+    <loc>https://grafana-wizzy.com/examples/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/external-commands/</loc>
+    <loc>https://grafana-wizzy.com/external-commands/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/general-commands/</loc>
+    <loc>https://grafana-wizzy.com/general-commands/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/home/</loc>
+    <loc>https://grafana-wizzy.com/home/</loc>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/home/</loc>
+    <loc>https://grafana-wizzy.com/home/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/local-commands/</loc>
+    <loc>https://grafana-wizzy.com/local-commands/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/remote-commands/</loc>
+    <loc>https://grafana-wizzy.com/remote-commands/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://grafana-wizzy.github.io/wizzy-site/</loc>
+    <loc>https://grafana-wizzy.com/</loc>
     <priority>0</priority>
   </url>
   

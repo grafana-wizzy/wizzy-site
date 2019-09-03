@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Commands on wizzy - cli for Grafana</title>
-    <link>https://grafana-wizzy.github.io/wizzy-site/commands/index.xml</link>
+    <link>https://grafana-wizzy.com/commands/index.xml</link>
     <description>Recent content in Commands on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/commands/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.com/commands/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/commands/</link>
+      <link>https://grafana-wizzy.com/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/commands/</guid>
+      <guid>https://grafana-wizzy.com/commands/</guid>
       <description>
 
 &lt;h1 id=&#34;commands&#34;&gt;Commands&lt;/h1&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>Dashboard Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/commands/remote/dashboard-commands/</link>
+      <link>https://grafana-wizzy.com/commands/remote/dashboard-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/commands/remote/dashboard-commands/</guid>
+      <guid>https://grafana-wizzy.com/commands/remote/dashboard-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;dashboard-commands&#34;&gt;Dashboard commands&lt;/h1&gt;
@@ -60,10 +60,10 @@ $ wizzy clip dashboard DASHBOARD_SLUG
     
     <item>
       <title>Remote Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/commands/remote/</link>
+      <link>https://grafana-wizzy.com/commands/remote/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/commands/remote/</guid>
+      <guid>https://grafana-wizzy.com/commands/remote/</guid>
       <description>
 
 &lt;h1 id=&#34;remote-commands&#34;&gt;Remote commands&lt;/h1&gt;
@@ -74,10 +74,10 @@ $ wizzy clip dashboard DASHBOARD_SLUG
     
     <item>
       <title>Datasource Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/commands/remote/datasource-comands/</link>
+      <link>https://grafana-wizzy.com/commands/remote/datasource-comands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/commands/remote/datasource-comands/</guid>
+      <guid>https://grafana-wizzy.com/commands/remote/datasource-comands/</guid>
       <description>
 
 &lt;h1 id=&#34;datasource-commands&#34;&gt;Datasource commands&lt;/h1&gt;
@@ -105,10 +105,10 @@ $ wizzy export datasource DATASOURCE_NAME
     
     <item>
       <title>Local Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/commands/local/</link>
+      <link>https://grafana-wizzy.com/commands/local/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/commands/local/</guid>
+      <guid>https://grafana-wizzy.com/commands/local/</guid>
       <description>
 
 &lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;

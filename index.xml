@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wizzy - cli for Grafana</title>
-    <link>https://grafana-wizzy.github.io/wizzy-site/index.xml</link>
+    <link>https://grafana-wizzy.com/index.xml</link>
     <description>Recent content on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>External Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/</link>
+      <link>https://grafana-wizzy.com/external-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/external-commands/</guid>
+      <guid>https://grafana-wizzy.com/external-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;external-commands&#34;&gt;External Commands&lt;/h1&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>General Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/general-commands/</link>
+      <link>https://grafana-wizzy.com/general-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/general-commands/</guid>
+      <guid>https://grafana-wizzy.com/general-commands/</guid>
       <description>
 
 &lt;h3 id=&#34;help-commands&#34;&gt;Help Commands&lt;/h3&gt;
@@ -107,10 +107,10 @@ $ wizzy set s3 path
     
     <item>
       <title>Local Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/</link>
+      <link>https://grafana-wizzy.com/local-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/</guid>
+      <guid>https://grafana-wizzy.com/local-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;
@@ -135,10 +135,10 @@ $ wizzy set s3 path
     
     <item>
       <title>Remote Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/</link>
+      <link>https://grafana-wizzy.com/remote-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/</guid>
+      <guid>https://grafana-wizzy.com/remote-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;remote-commands&#34;&gt;Remote Commands&lt;/h1&gt;
@@ -151,10 +151,10 @@ $ wizzy set s3 path
     
     <item>
       <title>Use cases</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/home/use-cases/</link>
+      <link>https://grafana-wizzy.com/home/use-cases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/home/use-cases/</guid>
+      <guid>https://grafana-wizzy.com/home/use-cases/</guid>
       <description>&lt;p&gt;There can be a lot of use cases where wizzy can be used and some of them which I can think of right now are listed below. If you would like to do any of the following tasks in Grafana, then &lt;code&gt;wizzy&lt;/code&gt; can help you accomplish them with its easy command line interface:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -177,15 +177,15 @@ $ wizzy set s3 path
     
     <item>
       <title>AWS S3 Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/s3-commands/</link>
+      <link>https://grafana-wizzy.com/external-commands/s3-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/external-commands/s3-commands/</guid>
+      <guid>https://grafana-wizzy.com/external-commands/s3-commands/</guid>
       <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow. Please note that these external commands does not support Dashboard context as they interact with external systems.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Have your aws config file under ~/.aws/config (standard aws config location).&lt;/li&gt;
-&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands. Please check &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/general-commands&#34;&gt;General commands&lt;/a&gt; to see examples.&lt;/li&gt;
+&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands. Please check &lt;a href=&#34;https://grafana-wizzy.com/general-commands&#34;&gt;General commands&lt;/a&gt; to see examples.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;And then you can use the following commands to upload and download your dashboards to and from S3.&lt;/p&gt;
@@ -228,10 +228,10 @@ For downloading all dashboards:&lt;/p&gt;
     
     <item>
       <title>Dashboard Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-commands/</link>
+      <link>https://grafana-wizzy.com/local-commands/dashboard-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-commands/</guid>
+      <guid>https://grafana-wizzy.com/local-commands/dashboard-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with json files stored locally under dashboards directory.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -271,10 +271,10 @@ $ wizzy summarize dashboard cpu-stats
     
     <item>
       <title>Dashboard Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/dashboard-commands/</link>
+      <link>https://grafana-wizzy.com/remote-commands/dashboard-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/dashboard-commands/</guid>
+      <guid>https://grafana-wizzy.com/remote-commands/dashboard-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with Grafana dashboards.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -338,7 +338,7 @@ For exporting all local dashboards to Grafana, use the following command:&lt;/p&
 &lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard cpu-stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Generate a gif image for Grafana dashboards. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Generate a gif image for Grafana dashboards. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://grafana-wizzy.com/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.
 Makes a clip of a dashboard&amp;rsquo;s last 24 hours of data:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard DASHBOARD_SLUG
@@ -376,10 +376,10 @@ Makes a clip of a dashboard&amp;rsquo;s last 24 hours of data:&lt;/p&gt;
     
     <item>
       <title>Datasource Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/datasource-commands/</link>
+      <link>https://grafana-wizzy.com/remote-commands/datasource-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/datasource-commands/</guid>
+      <guid>https://grafana-wizzy.com/remote-commands/datasource-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with Grafana datasources.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -436,10 +436,10 @@ For exporting all datasources:&lt;/p&gt;
     
     <item>
       <title>Grafana.net Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/gnet-commands/</link>
+      <link>https://grafana-wizzy.com/external-commands/gnet-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/external-commands/gnet-commands/</guid>
+      <guid>https://grafana-wizzy.com/external-commands/gnet-commands/</guid>
       <description>&lt;p&gt;For listing/downloading dashboards from Grafana.net community following commands can be used. There is no extra configurations needed for these commands.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -473,10 +473,10 @@ For exporting all datasources:&lt;/p&gt;
     
     <item>
       <title>Org Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/org-commands/</link>
+      <link>https://grafana-wizzy.com/remote-commands/org-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/org-commands/</guid>
+      <guid>https://grafana-wizzy.com/remote-commands/org-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with Grafana organizations.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -557,12 +557,12 @@ Shows all orgs:&lt;/p&gt;
     
     <item>
       <title>Store Dashboards in Git</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-git/</link>
+      <link>https://grafana-wizzy.com/examples/store-dashboards-in-git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-git/</guid>
+      <guid>https://grafana-wizzy.com/examples/store-dashboards-in-git/</guid>
       <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.com/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
 
@@ -589,10 +589,10 @@ $ git commit -m &amp;quot;Initial dashboards commit&amp;quot;
     
     <item>
       <title>Getting Started</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/home/getting-started/</link>
+      <link>https://grafana-wizzy.com/home/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/home/getting-started/</guid>
+      <guid>https://grafana-wizzy.com/home/getting-started/</guid>
       <description>
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
@@ -685,16 +685,16 @@ $ wizzy set grafana password admin
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You are ready to use wizzy. Check out &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/examples&#34;&gt;examples&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;You are ready to use wizzy. Check out &lt;a href=&#34;https://grafana-wizzy.com/examples&#34;&gt;examples&lt;/a&gt;!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Row Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/row-commands/</link>
+      <link>https://grafana-wizzy.com/local-commands/row-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/row-commands/</guid>
+      <guid>https://grafana-wizzy.com/local-commands/row-commands/</guid>
       <description>&lt;p&gt;Following commands are used to operate on rows in json files stored locally under dashboards/rows directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -765,12 +765,12 @@ $ wizzy insert row memory-stats-row cassandra-stats
     
     <item>
       <title>Store Dashboards in AWS S3</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</link>
+      <link>https://grafana-wizzy.com/examples/store-dashboards-in-aws-s3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</guid>
+      <guid>https://grafana-wizzy.com/examples/store-dashboards-in-aws-s3/</guid>
       <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.com/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
 

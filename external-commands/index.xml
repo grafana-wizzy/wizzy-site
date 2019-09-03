@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>External-commands on wizzy - cli for Grafana</title>
-    <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/index.xml</link>
+    <link>https://grafana-wizzy.com/external-commands/index.xml</link>
     <description>Recent content in External-commands on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/external-commands/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.com/external-commands/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>External Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/</link>
+      <link>https://grafana-wizzy.com/external-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/external-commands/</guid>
+      <guid>https://grafana-wizzy.com/external-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;external-commands&#34;&gt;External Commands&lt;/h1&gt;
@@ -24,15 +24,15 @@
     
     <item>
       <title>AWS S3 Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/s3-commands/</link>
+      <link>https://grafana-wizzy.com/external-commands/s3-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/external-commands/s3-commands/</guid>
+      <guid>https://grafana-wizzy.com/external-commands/s3-commands/</guid>
       <description>&lt;p&gt;To use wizzy with AWS S3, there are couple of steps to follow. Please note that these external commands does not support Dashboard context as they interact with external systems.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Have your aws config file under ~/.aws/config (standard aws config location).&lt;/li&gt;
-&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands. Please check &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/general-commands&#34;&gt;General commands&lt;/a&gt; to see examples.&lt;/li&gt;
+&lt;li&gt;Set Bucket name and path (optional) using &lt;code&gt;wizzy set s3 bucket_name&lt;/code&gt; and &lt;code&gt;wizzy set s3 path&lt;/code&gt; commands. Please check &lt;a href=&#34;https://grafana-wizzy.com/general-commands&#34;&gt;General commands&lt;/a&gt; to see examples.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;And then you can use the following commands to upload and download your dashboards to and from S3.&lt;/p&gt;
@@ -75,10 +75,10 @@ For downloading all dashboards:&lt;/p&gt;
     
     <item>
       <title>Grafana.net Commands</title>
-      <link>https://grafana-wizzy.github.io/wizzy-site/external-commands/gnet-commands/</link>
+      <link>https://grafana-wizzy.com/external-commands/gnet-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://grafana-wizzy.github.io/wizzy-site/external-commands/gnet-commands/</guid>
+      <guid>https://grafana-wizzy.com/external-commands/gnet-commands/</guid>
       <description>&lt;p&gt;For listing/downloading dashboards from Grafana.net community following commands can be used. There is no extra configurations needed for these commands.&lt;/p&gt;
 
 &lt;ul&gt;
