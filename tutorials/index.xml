@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on wizzy - cli for Grafana</title>
-    <link>https://utkarshcmu.github.io/wizzy-site/tutorials/index.xml</link>
+    <link>https://grafana-wizzy.github.io/wizzy-site/tutorials/index.xml</link>
     <description>Recent content in Tutorials on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://utkarshcmu.github.io/wizzy-site/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Tutorials</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/tutorials/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/tutorials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/tutorials/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/tutorials/</guid>
       <description>
 
 &lt;h3 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h3&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>Store Dashboards in Github</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/tutorials/store-dashboards-in-github/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/tutorials/store-dashboards-in-github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/tutorials/store-dashboards-in-github/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/tutorials/store-dashboards-in-github/</guid>
       <description>&lt;p&gt;Learn how to store dashboards in Github&lt;/p&gt;
 </description>
     </item>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on wizzy - cli for Grafana</title>
-    <link>https://utkarshcmu.github.io/wizzy-site/home/index.xml</link>
+    <link>https://grafana-wizzy.github.io/wizzy-site/home/index.xml</link>
     <description>Recent content in Homes on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://utkarshcmu.github.io/wizzy-site/home/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/home/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Home</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/home/</guid>
       <description>
 
 &lt;h1 id=&#34;wizzy&#34;&gt;wizzy&lt;/h1&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Use cases</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/home/use-cases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/use-cases/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/home/use-cases/</guid>
       <description>&lt;p&gt;There can be a lot of use cases where wizzy can be used and some of them which I can think of right now are listed below. If you would like to do any of the following tasks in Grafana, then &lt;code&gt;wizzy&lt;/code&gt; can help you accomplish them with its easy command line interface:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>Getting Started</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/home/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/getting-started/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/home/getting-started/</guid>
       <description>
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
@@ -73,9 +73,9 @@ $ npm -v
 &lt;p&gt;There are 3 different ways you can install wizzy:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Using docker. Pull the latest docker image &lt;a href=&#34;https://github.com/utkarshcmu/wizzy-docker&#34;&gt;wizzy-docker&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Using docker. Pull the latest docker image &lt;a href=&#34;https://github.com/grafana-wizzy/wizzy-docker&#34;&gt;wizzy-docker&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ docker run --rm -it utkarshcmu/wizzy wizzy version
+&lt;pre&gt;&lt;code&gt;$ docker run --rm -it grafana-wizzy/wizzy wizzy version
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Using npm (Stable release):&lt;/p&gt;
@@ -87,7 +87,7 @@ $ npm -v
 
 &lt;li&gt;&lt;p&gt;Using Github (from source):&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/utkarshcmu/wizzy.git
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/grafana-wizzy/wizzy.git
 $ cd wizzy
 $ npm install
 $ npm link
@@ -148,16 +148,16 @@ $ wizzy set grafana password admin
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You are ready to use wizzy. Check out &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/examples&#34;&gt;examples&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;You are ready to use wizzy. Check out &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/examples&#34;&gt;examples&lt;/a&gt;!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Concepts</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/concepts/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/home/concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/concepts/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/home/concepts/</guid>
       <description>&lt;p&gt;There are basically 2 copies of your Grafana entities. One running in Grafana live currently and second stored in your local directory.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;For example:&lt;/em&gt;&lt;/p&gt;
@@ -178,10 +178,10 @@ $ wizzy set grafana password admin
     
     <item>
       <title>Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/home/commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/home/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/home/commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/home/commands/</guid>
       <description>&lt;p&gt;There are 4 types of commands in wizzy.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Remote commands&lt;/strong&gt; - which interact with your Grafana installation directly.&lt;/p&gt;

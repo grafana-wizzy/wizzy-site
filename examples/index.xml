@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Examples on wizzy - cli for Grafana</title>
-    <link>https://utkarshcmu.github.io/wizzy-site/examples/index.xml</link>
+    <link>https://grafana-wizzy.github.io/wizzy-site/examples/index.xml</link>
     <description>Recent content in Examples on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://utkarshcmu.github.io/wizzy-site/examples/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/examples/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Examples</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/examples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/examples/</guid>
       <description>
 
 &lt;h1 id=&#34;examples&#34;&gt;Examples&lt;/h1&gt;
@@ -24,12 +24,12 @@
     
     <item>
       <title>Store Dashboards in Git</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-git/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-git/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-git/</guid>
       <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
 
@@ -56,12 +56,12 @@ $ git commit -m &amp;quot;Initial dashboards commit&amp;quot;
     
     <item>
       <title>Store Dashboards in AWS S3</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/examples/store-dashboards-in-aws-s3/</guid>
       <description>&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
 
@@ -90,14 +90,14 @@ $ wizzy upload to-s3 dashboards
     
     <item>
       <title>Generate GIF from Dashboards</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/examples/clip-grafana-dashboards/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/examples/clip-grafana-dashboards/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/examples/clip-grafana-dashboards/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/examples/clip-grafana-dashboards/</guid>
       <description>&lt;p&gt;You can generate a gif image of your favorite Grafana dashbords now, using the following commands:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download wizzy and initialize the directory with git as specified in the instructions. Instructions are here - &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/home/getting-started&#34;&gt;Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Set Grafana properties if not set already:&lt;/p&gt;
 

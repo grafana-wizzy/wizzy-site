@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Local-commands on wizzy - cli for Grafana</title>
-    <link>https://utkarshcmu.github.io/wizzy-site/local-commands/index.xml</link>
+    <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/index.xml</link>
     <description>Recent content in Local-commands on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://utkarshcmu.github.io/wizzy-site/local-commands/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/local-commands/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Local Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;local-commands&#34;&gt;Local commands&lt;/h1&gt;
@@ -38,10 +38,10 @@
     
     <item>
       <title>Dashboard Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with json files stored locally under dashboards directory.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -81,10 +81,10 @@ $ wizzy summarize dashboard cpu-stats
     
     <item>
       <title>Row Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/row-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/row-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/row-commands/</guid>
       <description>&lt;p&gt;Following commands are used to operate on rows in json files stored locally under dashboards/rows directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -155,10 +155,10 @@ $ wizzy insert row memory-stats-row cassandra-stats
     
     <item>
       <title>Panel Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/panel-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/panel-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/panel-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/panel-commands/</guid>
       <description>&lt;p&gt;Following commands are used to operate on panels in json files stored locally under dashboards/panels directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -233,10 +233,10 @@ $ wizzy insert panel connections-panel cassandra-stats.3
     
     <item>
       <title>Template Variable Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/temp-var-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/temp-var-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/temp-var-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/temp-var-commands/</guid>
       <description>&lt;p&gt;Following commands are used to operate on template variables in json files stored locally under dashboards/temp-vars directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -300,10 +300,10 @@ $ wizzy insert temp-var var-application cassandra-stats
     
     <item>
       <title>Dashboard List Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/dash-list-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/dash-list-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dash-list-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/dash-list-commands/</guid>
       <description>&lt;p&gt;Following commands are used to manage custom dashboard lists. These lists are persisted so that a user does not have to create these lists again and they can be re-used for various commands such as clip, etc.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -342,10 +342,10 @@ $ wizzy insert temp-var var-application cassandra-stats
     
     <item>
       <title>Dashboard Tags Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-tags-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-tags-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/dashboard-tags-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/dashboard-tags-commands/</guid>
       <description>&lt;p&gt;Following commands are used to operate on dashboard tags in json files stored locally under dashboards/temp-vars directory. These commands need Dashboard Context. Please set Dashboard Context before using them.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -383,10 +383,10 @@ $ wizzy insert dash-tags my-tags cassandra-stats
     
     <item>
       <title>Datasource Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/datasource-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/datasource-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/datasource-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/datasource-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with json files stored locally under datasources directory.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -400,10 +400,10 @@ $ wizzy insert dash-tags my-tags cassandra-stats
     
     <item>
       <title>Org Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/local-commands/org-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/local-commands/org-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/local-commands/org-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/local-commands/org-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with json files stored locally under orgs directory.&lt;/p&gt;
 
 &lt;ul&gt;

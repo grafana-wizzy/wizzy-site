@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Remote-commands on wizzy - cli for Grafana</title>
-    <link>https://utkarshcmu.github.io/wizzy-site/remote-commands/index.xml</link>
+    <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/index.xml</link>
     <description>Recent content in Remote-commands on wizzy - cli for Grafana</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://utkarshcmu.github.io/wizzy-site/remote-commands/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://grafana-wizzy.github.io/wizzy-site/remote-commands/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Remote Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/remote-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/</guid>
       <description>
 
 &lt;h1 id=&#34;remote-commands&#34;&gt;Remote Commands&lt;/h1&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Dashboard Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/remote-commands/dashboard-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/dashboard-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/dashboard-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/dashboard-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with Grafana dashboards.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -93,7 +93,7 @@ For exporting all local dashboards to Grafana, use the following command:&lt;/p&
 &lt;pre&gt;&lt;code&gt;$ wizzy delete dashboard cpu-stats
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Generate a gif image for Grafana dashboards. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://utkarshcmu.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;clip&lt;/strong&gt; - Generate a gif image for Grafana dashboards. Please set all 6 clip configuration properties otherwise this command will not work. To know how to set properties, please look at &lt;a href=&#34;https://grafana-wizzy.github.io/wizzy-site/wizzy-site/general-commands/&#34;&gt;General commands&lt;/a&gt;. Generated clip will be under clips directory.
 Makes a clip of a dashboard&amp;rsquo;s last 24 hours of data:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ wizzy clip dashboard DASHBOARD_SLUG
@@ -131,10 +131,10 @@ Makes a clip of a dashboard&amp;rsquo;s last 24 hours of data:&lt;/p&gt;
     
     <item>
       <title>Datasource Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/remote-commands/datasource-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/datasource-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/datasource-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/datasource-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with Grafana datasources.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -191,10 +191,10 @@ For exporting all datasources:&lt;/p&gt;
     
     <item>
       <title>Org Commands</title>
-      <link>https://utkarshcmu.github.io/wizzy-site/remote-commands/org-commands/</link>
+      <link>https://grafana-wizzy.github.io/wizzy-site/remote-commands/org-commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://utkarshcmu.github.io/wizzy-site/remote-commands/org-commands/</guid>
+      <guid>https://grafana-wizzy.github.io/wizzy-site/remote-commands/org-commands/</guid>
       <description>&lt;p&gt;Following commands are used to interact with Grafana organizations.&lt;/p&gt;
 
 &lt;ul&gt;
